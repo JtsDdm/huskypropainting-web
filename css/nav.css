@@ -1,14 +1,15 @@
 /* ============================================================
-   HUSKY PRO PAINTING — NAV COMPONENT
+   HUSKY PRO PAINTING — NAV COMPONENT (tema blanco)
    ============================================================ */
 
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(15,15,15,.95);
+  background: rgba(255,255,255,.97);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(249,99,2,.2);
+  border-bottom: 2px solid var(--orange);
+  box-shadow: 0 2px 20px rgba(0,0,0,.08);
 }
 
 .nav-inner {
@@ -44,7 +45,7 @@ nav {
   font-size: 20px;
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--white);
+  color: #1a1a1a;
   line-height: 1.1;
   letter-spacing: .04em;
 }
@@ -64,7 +65,7 @@ nav {
   font-weight: 600;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: rgba(240,237,232,.7);
+  color: #444444;
   transition: color var(--transition);
 }
 
@@ -82,7 +83,7 @@ nav {
   font-family: var(--font-display);
   font-size: 17px;
   font-weight: 700;
-  color: var(--white);
+  color: #1a1a1a;
   letter-spacing: .04em;
   transition: color var(--transition);
 }
@@ -104,7 +105,7 @@ nav {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--white);
+  background: #333333;
   transition: .3s;
 }
 
@@ -112,10 +113,11 @@ nav {
 .nav-mobile {
   display: none;
   flex-direction: column;
-  background: var(--dark);
+  background: #ffffff;
   border-top: 1px solid rgba(249,99,2,.2);
   padding: 16px var(--container-pad);
   gap: 4px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
 }
 
 .nav-mobile.open { display: flex; }
@@ -126,9 +128,9 @@ nav {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .08em;
-  color: var(--light);
+  color: #333333;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(0,0,0,.07);
   transition: color var(--transition);
 }
 

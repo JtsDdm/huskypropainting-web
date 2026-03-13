@@ -1,6 +1,6 @@
 /* ============================================================
    HUSKY PRO PAINTING — CSS VARIABLES
-   Cambia aquí y se aplica en TODA la web automáticamente
+   Tema: Blanco + Naranja
    ============================================================ */
 
 :root {
@@ -9,17 +9,17 @@
   --orange-dark:  #d95400;
   --orange-light: #ff7a24;
 
-  /* Backgrounds */
-  --black:  #0f0f0f;
-  --dark:   #1a1a1a;
-  --dark2:  #252525;
-  --dark3:  #2e2e2e;
+  /* Backgrounds — blancos */
+  --black:  #ffffff;
+  --dark:   #f7f7f7;
+  --dark2:  #efefef;
+  --dark3:  #e5e5e5;
 
-  /* Text */
-  --light:  #f0ede8;
-  --white:  #ffffff;
-  --gray:   #888888;
-  --gray2:  #555555;
+  /* Text — oscuros */
+  --light:  #1a1a1a;
+  --white:  #1a1a1a;
+  --gray:   #666666;
+  --gray2:  #999999;
 
   /* Typography */
   --font-display: 'Barlow Condensed', sans-serif;
