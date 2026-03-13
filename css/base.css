@@ -1,0 +1,143 @@
+/* ============================================================
+   HUSKY PRO PAINTING — BASE STYLES
+   Reset, tipografía, utilidades globales
+   ============================================================ */
+
+/* ── RESET ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--light);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul { list-style: none; }
+
+/* ── CONTAINER ──────────────────────────────────────────── */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* ── TYPOGRAPHY ─────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.0;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  color: var(--white);
+}
+
+.section-title span { color: var(--orange); }
+
+/* ── BUTTONS ─────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--light);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(255,255,255,.3);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.btn-outline:hover {
+  border-color: var(--orange);
+  background: rgba(249,99,2,.08);
+}
+
+/* ── ANIMATIONS ─────────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up:nth-child(2) { transition-delay: .1s; }
+.fade-up:nth-child(3) { transition-delay: .2s; }
+.fade-up:nth-child(4) { transition-delay: .3s; }
+
+/* ── SECTION SPACING ────────────────────────────────────── */
+.section { padding: var(--section-padding) 0; }
+.section--dark  { background: var(--dark); }
+.section--black { background: var(--black); }
+
+/* ── RESPONSIVE BASE ────────────────────────────────────── */
+@media (max-width: 600px) {
+  :root { --section-padding: 64px; }
+}

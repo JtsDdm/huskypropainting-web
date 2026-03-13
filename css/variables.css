@@ -1,0 +1,40 @@
+/* ============================================================
+   HUSKY PRO PAINTING — CSS VARIABLES
+   Cambia aquí y se aplica en TODA la web automáticamente
+   ============================================================ */
+
+:root {
+  /* Brand Colors */
+  --orange:       #F96302;
+  --orange-dark:  #d95400;
+  --orange-light: #ff7a24;
+
+  /* Backgrounds */
+  --black:  #0f0f0f;
+  --dark:   #1a1a1a;
+  --dark2:  #252525;
+  --dark3:  #2e2e2e;
+
+  /* Text */
+  --light:  #f0ede8;
+  --white:  #ffffff;
+  --gray:   #888888;
+  --gray2:  #555555;
+
+  /* Typography */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
+  /* Spacing */
+  --section-padding: 100px;
+  --container-max:   1200px;
+  --container-pad:   24px;
+
+  /* Borders */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Transitions */
+  --transition: .2s ease;
+}
