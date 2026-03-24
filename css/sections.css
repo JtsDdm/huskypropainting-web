@@ -768,9 +768,10 @@
 
 /* ── FOOTER ─────────────────────────────────────────────── */
 footer {
-  background: #1a1a1a;
+  background: #ffffff;
   border-top: 4px solid var(--orange);
   padding: 60px 0 32px;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.06);
 }
 
 .footer-grid {
@@ -782,7 +783,7 @@ footer {
 
 .footer-brand p {
   font-size: 14px;
-  color: #888888;
+  color: #666666;
   line-height: 1.7;
   margin-top: 16px;
   max-width: 280px;
@@ -806,14 +807,14 @@ footer {
 
 .footer-links a {
   font-size: 14px;
-  color: #888888;
+  color: #555555;
   transition: color var(--transition);
 }
 
-.footer-links a:hover { color: #ffffff; }
+.footer-links a:hover { color: var(--orange); }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.08);
+  border-top: 1px solid rgba(0,0,0,.08);
   padding-top: 28px;
   display: flex;
   align-items: center;
@@ -822,7 +823,7 @@ footer {
   gap: 12px;
 }
 
-.footer-bottom p { font-size: 13px; color: #666666; }
+.footer-bottom p { font-size: 13px; color: #999999; }
 
 .footer-legal {
   display: flex;
@@ -831,11 +832,11 @@ footer {
 }
 
 .footer-legal a {
-  color: #666666;
+  color: #999999;
   transition: color var(--transition);
 }
 
-.footer-legal a:hover { color: #ffffff; }
+.footer-legal a:hover { color: var(--orange); }
 
 /* ── BLOG CARDS ─────────────────────────────────────────── */
 .blog-grid {
