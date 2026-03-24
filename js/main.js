@@ -104,13 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ── NAV BACKGROUND OPACITY ON SCROLL ──────────────────
+  // ── NAV SHADOW ON SCROLL ───────────────────────────────
   const nav = document.querySelector('nav');
   if (nav) {
     window.addEventListener('scroll', () => {
-      nav.style.background = window.scrollY > 40
-        ? 'rgba(15,15,15,.98)'
-        : 'rgba(15,15,15,.95)';
+      nav.style.boxShadow = window.scrollY > 40
+        ? '0 2px 24px rgba(0,0,0,.13)'
+        : '0 2px 20px rgba(0,0,0,.08)';
     }, { passive: true });
   }
 

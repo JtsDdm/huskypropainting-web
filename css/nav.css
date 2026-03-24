@@ -34,7 +34,6 @@ nav {
   height: 38px;
   object-fit: contain;
   flex-shrink: 0;
-  filter: brightness(0) invert(1);
 }
 
 .nav-logo-text {
