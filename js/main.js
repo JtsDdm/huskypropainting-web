@@ -60,48 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ── ESTIMATE FORM HANDLER ──────────────────────────────
-  // Replace the TODO below with your GHL webhook URL
-  const form = document.getElementById('estimate-form');
-
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      const data = Object.fromEntries(new FormData(form).entries());
-
-      // TODO: Replace with your GHL form webhook URL
-      // const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/YOUR_ID';
-      // await fetch(GHL_WEBHOOK, { method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' } });
-
-      // Simulated success — remove this when real webhook is connected
-      await new Promise(r => setTimeout(r, 800));
-
-      btn.textContent = '✓ Sent! We\'ll call you within 24 hours.';
-      btn.style.background = '#22c55e';
-
-      // Fire Meta Pixel lead event if pixel is loaded
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', {
-          content_name: 'Free Estimate Request',
-          content_category: data.service || 'painting'
-        });
-      }
-
-      // Fire GA4 event if analytics is loaded
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'generate_lead', {
-          event_category: 'Contact Form',
-          event_label: data.service || 'general'
-        });
-      }
-    });
-  }
 
 
   // ── NAV SHADOW ON SCROLL ───────────────────────────────
