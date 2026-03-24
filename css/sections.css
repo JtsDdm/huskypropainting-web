@@ -301,27 +301,44 @@
 .why-badge-float {
   position: absolute;
   bottom: -24px; right: -24px;
-  background: var(--orange);
+  background: #ffffff;
+  border: 1.5px solid rgba(249,99,2,.2);
   border-radius: var(--radius-md);
-  padding: 24px 28px;
+  padding: 18px 24px;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(249,99,2,.35);
+  box-shadow: 0 12px 32px rgba(0,0,0,.12);
+  min-width: 148px;
 }
 
-.why-badge-float .num {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 900;
-  color: #fff;
+.why-badge-stars {
+  color: var(--orange);
+  font-size: 20px;
+  letter-spacing: 2px;
   line-height: 1;
+  margin-bottom: 6px;
 }
 
-.why-badge-float .label {
+.why-badge-text {
+  font-family: var(--font-display);
   font-size: 13px;
-  font-weight: 600;
-  color: rgba(255,255,255,.85);
+  font-weight: 700;
+  color: #1a1a1a;
   text-transform: uppercase;
   letter-spacing: .06em;
+}
+
+.why-badge-score {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--orange);
+}
+
+.why-badge-location {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-top: 4px;
 }
 
 .why-list { display: flex; flex-direction: column; gap: 28px; }
