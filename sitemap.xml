@@ -9,6 +9,26 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- PÁGINAS E-E-A-T -->
+  <url>
+    <loc>https://huskypropainting.com/about.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huskypropainting.com/reviews.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huskypropainting.com/gallery.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- PÁGINAS DE SERVICIOS -->
   <url>
     <loc>https://huskypropainting.com/pages/exterior-painting.html</loc>
@@ -32,19 +52,49 @@
   <!-- PÁGINAS SEO LOCAL -->
   <url>
     <loc>https://huskypropainting.com/pages/redding-ca.html</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://huskypropainting.com/pages/anderson-ca.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://huskypropainting.com/pages/shasta-ca.html</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://huskypropainting.com/pages/palo-cedro-ca.html</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huskypropainting.com/pages/shasta-lake-ca.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huskypropainting.com/pages/red-bluff-ca.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huskypropainting.com/pages/chico-ca.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huskypropainting.com/pages/cottonwood-ca.html</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
