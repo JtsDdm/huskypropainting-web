@@ -113,6 +113,19 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://huskypropainting.com/pages/bella-vista-ca.html</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huskypropainting.com/pages/lake-redding-ca.html</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- BLOG -->
   <url>
     <loc>https://huskypropainting.com/blog/</loc>
