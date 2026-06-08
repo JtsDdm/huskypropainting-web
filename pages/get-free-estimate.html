@@ -55,7 +55,7 @@
       gap: 10px;
       color: var(--white);
     }
-    .header-logo img { width: 38px; height: 38px; }
+    .header-logo img { width: auto; height: 48px; border-radius: 50%; }
     .header-logo-text {
       font-family: var(--font-display);
       font-size: 18px;
@@ -76,25 +76,28 @@
       font-weight: 700;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: rgba(255,255,255,.55);
+      color: #ffffff;
       display: block;
     }
     .header-phone-num {
       font-family: var(--font-display);
       font-size: 22px;
-      font-weight: 900;
+      font-weight: 600;
       color: var(--orange);
       letter-spacing: .02em;
     }
     .header-phone-icon {
-      width: 38px;
-      height: 38px;
-      background: var(--orange);
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .header-phone-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* ── HERO ───────────────────────────────── */
@@ -231,7 +234,6 @@
       width: 100%;
       border: none;
       border-radius: 8px;
-      min-height: 420px;
     }
     .form-privacy {
       font-size: 11px;
@@ -244,7 +246,7 @@
     /* ── TRUST BAR ──────────────────────────── */
     #trust {
       background: var(--orange);
-      padding: 22px 0;
+      padding: 26px 0;
     }
     .trust-inner {
       display: flex;
@@ -256,8 +258,8 @@
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 10px 32px;
+      gap: 14px;
+      padding: 10px 36px;
       font-family: var(--font-display);
       font-weight: 700;
       font-size: 15px;
@@ -266,15 +268,23 @@
       color: var(--white);
     }
     .trust-item-icon {
-      width: 36px;
-      height: 36px;
-      background: rgba(255,255,255,.2);
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
       flex-shrink: 0;
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+    }
+    .trust-item-icon img {
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+      mix-blend-mode: screen;
     }
     .trust-item-sub {
       font-size: 11px;
@@ -285,15 +295,27 @@
     }
     .trust-sep {
       width: 1px;
-      height: 40px;
-      background: rgba(255,255,255,.3);
+      height: 44px;
+      background: rgba(255,255,255,.25);
     }
 
     /* ── PROMO SECTION ──────────────────────── */
     #promo {
       background: var(--dark2);
       padding: 56px 0;
+      position: relative;
+      overflow: hidden;
     }
+    #promo .promo-bg-texture {
+      position: absolute;
+      inset: 0;
+      background-image: url('../images/bg-promo-texture.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: .30;
+      z-index: 0;
+    }
+    #promo .container { position: relative; z-index: 1; }
     .promo-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -437,11 +459,24 @@
     }
     .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
 
-    /* ── BEFORE / AFTER ─────────────────────── */
+    /* ── GALLERY ────────────────────────────── */
     #transformations {
       background: var(--gray-light);
       padding: 72px 0;
+      position: relative;
+      overflow: hidden;
     }
+    #transformations::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('../images/bg-ourwork-pattern.png');
+      background-size: 220px 220px;
+      background-repeat: repeat;
+      opacity: .30;
+      z-index: 0;
+    }
+    #transformations .container { position: relative; z-index: 1; }
     .section-header {
       text-align: center;
       margin-bottom: 48px;
@@ -465,116 +500,116 @@
       line-height: 1.05;
     }
     .section-title span { color: var(--orange); }
-    .ba-grid {
+    .gallery-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
-    .ba-pair {
-      background: var(--white);
-      border-radius: 16px;
+    .gallery-item {
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,.08);
-    }
-    .ba-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .ba-img-wrap {
+      box-shadow: 0 4px 20px rgba(0,0,0,.1);
       position: relative;
-      overflow: hidden;
     }
-    .ba-img-wrap img {
+    .gallery-item img {
       width: 100%;
-      height: 220px;
+      height: 240px;
       object-fit: cover;
       transition: transform .4s;
+      display: block;
     }
-    .ba-img-wrap:hover img { transform: scale(1.04); }
-    .ba-label {
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-caption {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      font-family: var(--font-display);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 4px;
-    }
-    .ba-label.before { background: rgba(0,0,0,.65); color: var(--white); }
-    .ba-label.after  { background: var(--orange); color: var(--white); }
-    .ba-info {
-      padding: 20px;
-    }
-    .ba-location {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.72));
+      padding: 28px 16px 14px;
       font-family: var(--font-display);
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: .08em;
+      letter-spacing: .06em;
       text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 4px;
-    }
-    .ba-desc {
-      font-size: 14px;
-      color: var(--gray);
-      line-height: 1.5;
+      color: var(--white);
     }
 
     /* ── PROCESS ────────────────────────────── */
     #process {
       background: var(--dark);
-      padding: 72px 0;
+      padding: 88px 0;
     }
-    #process .section-title { color: var(--white); }
+    #process .section-header { margin-bottom: 64px; }
+    #process .section-tag { color: rgba(249,99,2,.9); }
+    #process .section-title { color: var(--white); font-size: clamp(32px, 4.5vw, 52px); }
     .process-steps {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      margin-top: 48px;
+      gap: 16px;
       position: relative;
     }
     .process-steps::before {
       content: '';
       position: absolute;
-      top: 28px;
-      left: 10%;
-      right: 10%;
+      top: 68px;
+      left: calc(10% + 8px);
+      right: calc(10% + 8px);
       height: 2px;
-      background: rgba(249,99,2,.25);
+      background: linear-gradient(90deg, transparent, rgba(249,99,2,.4) 20%, rgba(249,99,2,.4) 80%, transparent);
+      z-index: 0;
     }
     .process-step {
       text-align: center;
       position: relative;
       z-index: 1;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
+      padding: 32px 16px 28px;
+      transition: background .25s, border-color .25s, transform .25s;
     }
-    .step-num {
-      width: 56px;
-      height: 56px;
+    .process-step:hover {
+      background: rgba(249,99,2,.1);
+      border-color: rgba(249,99,2,.35);
+      transform: translateY(-4px);
+    }
+    .step-icon-img {
+      width: 88px;
+      height: 88px;
+      object-fit: cover;
+      margin: 0 auto 18px;
+      display: block;
+      border-radius: 50%;
+      box-shadow: 0 6px 20px rgba(249,99,2,.35), 0 0 0 3px rgba(249,99,2,.2);
+    }
+    .step-num-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 28px;
       background: var(--orange);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 13px;
       font-weight: 900;
       color: var(--white);
-      margin: 0 auto 14px;
+      box-shadow: 0 0 0 3px var(--dark);
     }
-    .step-icon { font-size: 22px; margin: 0 auto 14px; }
     .step-title {
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: .08em;
       color: var(--white);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
-    .step-desc { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.5; }
+    .step-desc { font-size: 13px; color: rgba(255,255,255,.6); line-height: 1.6; }
 
     /* ── REVIEWS ────────────────────────────── */
     #reviews {
@@ -656,7 +691,7 @@
     .cta-phone {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       background: var(--white);
       color: var(--orange);
       font-family: var(--font-display);
@@ -667,6 +702,19 @@
       transition: transform .15s;
     }
     .cta-phone:hover { transform: translateY(-2px); }
+    .cta-phone-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .cta-phone-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: invert(47%) sepia(99%) saturate(712%) hue-rotate(351deg) brightness(103%);
+    }
     .cta-form-card {
       background: var(--white);
       border-radius: 16px;
@@ -700,11 +748,19 @@
     .footer-meta-item {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       font-size: 13px;
       color: rgba(255,255,255,.5);
     }
     .footer-meta-item span { color: var(--orange); font-weight: 600; }
+    .footer-icon {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      opacity: .55;
+      mix-blend-mode: screen;
+      flex-shrink: 0;
+    }
 
     /* ── MOBILE STICKY CTA ──────────────────── */
     .mobile-cta {
@@ -736,8 +792,8 @@
       .hero-inner { grid-template-columns: 1fr; gap: 32px; padding: 40px 0 36px; }
       .hero-form-card { max-width: 520px; margin: 0 auto; }
       .promo-inner { grid-template-columns: 1fr; }
-      .ba-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 16px; }
       .process-steps::before { display: none; }
       .reviews-grid { grid-template-columns: 1fr; }
       .cta-inner { grid-template-columns: 1fr; }
@@ -749,8 +805,10 @@
     @media (max-width: 600px) {
       .trust-sep { display: none; }
       .trust-item { padding: 10px 20px; font-size: 13px; }
-      .process-steps { grid-template-columns: 1fr 1fr; }
-      .ba-img-wrap img { height: 160px; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .step-icon-img { width: 64px; height: 64px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .gallery-item img { height: 180px; }
       .header-phone-label { display: none; }
     }
   </style>
@@ -761,11 +819,13 @@
 <header>
   <div class="container header-inner">
     <div class="header-logo">
-      <img src="../images/Branding/lobo.png" alt="Husky Pro Painting logo" width="38" height="38">
+      <img src="../images/Branding/lobo.png" alt="Husky Pro Painting logo" width="32" height="44">
       <div class="header-logo-text">Husky <span>Pro</span><br>Painting</div>
     </div>
     <a href="tel:+15307776573" class="header-phone" aria-label="Call us at (530) 777-6573">
-      <div class="header-phone-icon">📞</div>
+      <div class="header-phone-icon">
+        <img src="../images/icon-phone.png" alt="Call Husky Pro Painting" width="42" height="42">
+      </div>
       <div>
         <span class="header-phone-label">Call Us Today</span>
         <span class="header-phone-num">(530) 777-6573</span>
@@ -820,11 +880,12 @@
       <p class="form-card-sub">No commitment. No pressure. <strong>Response in under 24 hours.</strong></p>
       <div class="form-divider"></div>
       <div class="form-iframe-wrap">
-        <iframe src="https://api.leadconnectorhq.com/widget/booking/rgLhl8smRqL3FtdhJ0PC"
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/survey/UbYQqZBNDnJzQhLnbxnX"
+          style="border:none;width:100%;"
           scrolling="no"
-          id="lp-booking-widget"
-          title="Schedule your free painting estimate"
-          loading="lazy">
+          id="UbYQqZBNDnJzQhLnbxnX"
+          title="survey">
         </iframe>
       </div>
       <p class="form-privacy">🔒 Your information is private and never shared.</p>
@@ -838,7 +899,9 @@
   <div class="container">
     <div class="trust-inner">
       <div class="trust-item">
-        <div class="trust-item-icon">🏅</div>
+        <div class="trust-item-icon">
+          <img src="../images/icon-trust2.png" alt="Licensed icon" width="48" height="48">
+        </div>
         <div>
           <div>Licensed &amp; Insured</div>
           <div class="trust-item-sub">Lic# 1131340</div>
@@ -846,7 +909,9 @@
       </div>
       <div class="trust-sep"></div>
       <div class="trust-item">
-        <div class="trust-item-icon">🤝</div>
+        <div class="trust-item-icon">
+          <img src="../images/icon-trust4.png" alt="Trusted local icon" width="48" height="48">
+        </div>
         <div>
           <div>Local &amp; Trusted</div>
           <div class="trust-item-sub">Proudly serving our community</div>
@@ -854,7 +919,9 @@
       </div>
       <div class="trust-sep"></div>
       <div class="trust-item">
-        <div class="trust-item-icon">🛡️</div>
+        <div class="trust-item-icon">
+          <img src="../images/icon-trust3.png" alt="Warranty shield icon" width="48" height="48">
+        </div>
         <div>
           <div>5-Year Warranty</div>
           <div class="trust-item-sub">Workmanship guaranteed</div>
@@ -862,7 +929,9 @@
       </div>
       <div class="trust-sep"></div>
       <div class="trust-item">
-        <div class="trust-item-icon">⚡</div>
+        <div class="trust-item-icon">
+          <img src="../images/icon-trust1.png" alt="Fast estimate icon" width="48" height="48">
+        </div>
         <div>
           <div>Free Estimate</div>
           <div class="trust-item-sub">Response within 24 hours</div>
@@ -874,6 +943,7 @@
 
 <!-- ═══════════════ PROMO ═══════════════ -->
 <section id="promo">
+  <div class="promo-bg-texture" aria-hidden="true"></div>
   <div class="container promo-inner">
     <div class="promo-text">
       <span class="section-tag">Special Promotion</span>
@@ -899,45 +969,37 @@
   </div>
 </section>
 
-<!-- ═══════════════ BEFORE / AFTER ═══════════════ -->
+<!-- ═══════════════ GALLERY ═══════════════ -->
 <section id="transformations">
   <div class="container">
     <div class="section-header">
       <span class="section-tag">Our Work</span>
-      <h2 class="section-title">Real Transformations.<br><span>Real Results.</span></h2>
+      <h2 class="section-title">Real Projects.<br><span>Real Results.</span></h2>
     </div>
-    <div class="ba-grid">
-      <div class="ba-pair">
-        <div class="ba-images">
-          <div class="ba-img-wrap">
-            <img src="../images/lp-before.jpg" alt="House exterior before painting — faded worn paint, Redding CA" width="450" height="220" loading="lazy">
-            <span class="ba-label before">Before</span>
-          </div>
-          <div class="ba-img-wrap">
-            <img src="../images/lp-after.jpg" alt="House exterior after professional painting by Husky Pro Painting, Redding CA" width="450" height="220" loading="lazy">
-            <span class="ba-label after">After</span>
-          </div>
-        </div>
-        <div class="ba-info">
-          <div class="ba-location">📍 Redding, CA</div>
-          <div class="ba-desc">Complete exterior repaint — surface prep, primer, two coats Sherwin-Williams SuperPaint®. Finished in 3 days.</div>
-        </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="../images/lp-work1.jpg" alt="Husky Pro Painting crew painting house exterior in Redding CA" width="450" height="240" loading="lazy">
+        <div class="gallery-caption">📍 Redding, CA — Exterior Repaint</div>
       </div>
-      <div class="ba-pair">
-        <div class="ba-images">
-          <div class="ba-img-wrap">
-            <img src="../images/lp-before2.jpg" alt="Two story house exterior before painting — chalky peeling paint, Shasta County" width="450" height="220" loading="lazy">
-            <span class="ba-label before">Before</span>
-          </div>
-          <div class="ba-img-wrap">
-            <img src="../images/lp-after2.jpg" alt="Two story house exterior after painting — fresh white with navy trim, Shasta County" width="450" height="220" loading="lazy">
-            <span class="ba-label after">After</span>
-          </div>
-        </div>
-        <div class="ba-info">
-          <div class="ba-location">📍 Shasta County, CA</div>
-          <div class="ba-desc">Two-story exterior repaint including trim, fascia and shutters. Complete power wash and caulking before paint.</div>
-        </div>
+      <div class="gallery-item">
+        <img src="../images/lp-work2.jpg" alt="Beautiful blue stucco exterior finished by Husky Pro Painting, Redding CA" width="450" height="240" loading="lazy">
+        <div class="gallery-caption">📍 Redding, CA — Stucco Exterior</div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/lp-work3.jpg" alt="Husky Pro Painting professional painter at work on residential home, Shasta County" width="450" height="240" loading="lazy">
+        <div class="gallery-caption">📍 Shasta County — Detail Work</div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/lp-work4.jpg" alt="Freshly painted tan house exterior with garage — Husky Pro Painting Redding CA" width="450" height="240" loading="lazy">
+        <div class="gallery-caption">📍 Redding, CA — Complete Repaint</div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/lp-work5.jpg" alt="Teal house exterior painting completed by Husky Pro Painting, Shasta County CA" width="450" height="240" loading="lazy">
+        <div class="gallery-caption">📍 Shasta County — Color Transformation</div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/lp-work6.jpg" alt="Completed exterior house painting with porch — Husky Pro Painting Shasta County" width="450" height="240" loading="lazy">
+        <div class="gallery-caption">📍 Shasta County — Full Exterior</div>
       </div>
     </div>
   </div>
@@ -952,27 +1014,32 @@
     </div>
     <div class="process-steps">
       <div class="process-step">
-        <div class="step-num">1</div>
+        <div class="step-num-badge">1</div>
+        <img src="../images/icon-step1.png" alt="Schedule your estimate icon" class="step-icon-img" width="80" height="80" loading="lazy">
         <div class="step-title">Schedule</div>
         <p class="step-desc">Fill out the form above to book your free on-site estimate.</p>
       </div>
       <div class="process-step">
-        <div class="step-num">2</div>
+        <div class="step-num-badge">2</div>
+        <img src="../images/icon-step2.png" alt="Free estimate quote icon" class="step-icon-img" width="80" height="80" loading="lazy">
         <div class="step-title">Estimate</div>
         <p class="step-desc">We visit your home and deliver a detailed written quote within 24 hours.</p>
       </div>
       <div class="process-step">
-        <div class="step-num">3</div>
+        <div class="step-num-badge">3</div>
+        <img src="../images/icon-step3.png" alt="Surface preparation pressure washing icon" class="step-icon-img" width="80" height="80" loading="lazy">
         <div class="step-title">Prepare</div>
         <p class="step-desc">Power washing, sanding, caulking and priming — 80% of a lasting job.</p>
       </div>
       <div class="process-step">
-        <div class="step-num">4</div>
+        <div class="step-num-badge">4</div>
+        <img src="../images/icon-step4.png" alt="House painting with roller icon" class="step-icon-img" width="80" height="80" loading="lazy">
         <div class="step-title">Paint</div>
         <p class="step-desc">Premium Sherwin-Williams paint, clean lines, full two-coat coverage.</p>
       </div>
       <div class="process-step">
-        <div class="step-num">5</div>
+        <div class="step-num-badge">5</div>
+        <img src="../images/icon-step5.png" alt="Happy homeowner enjoying beautiful painted house icon" class="step-icon-img" width="80" height="80" loading="lazy">
         <div class="step-title">Enjoy</div>
         <p class="step-desc">Final walkthrough with you. Touch-ups on the spot. Property left spotless.</p>
       </div>
@@ -1035,7 +1102,10 @@
       <h2>Ready to<br>Transform<br>Your Home?</h2>
       <p>Fill out the form to schedule your free estimate. We'll visit your property and deliver a detailed written quote — no pressure, no obligation.</p>
       <a href="tel:+15307776573" class="cta-phone">
-        📞 (530) 777-6573
+        <div class="cta-phone-icon">
+          <img src="../images/icon-footer3.png" alt="Call now" width="36" height="36">
+        </div>
+        (530) 777-6573
       </a>
     </div>
     <div class="cta-form-card" id="cta-form">
@@ -1044,10 +1114,12 @@
       <p class="form-card-sub" style="margin-bottom:16px">Response within 24 hours. <strong>No commitment required.</strong></p>
       <div class="form-divider"></div>
       <div class="form-iframe-wrap">
-        <iframe src="https://api.leadconnectorhq.com/widget/booking/rgLhl8smRqL3FtdhJ0PC"
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/survey/UbYQqZBNDnJzQhLnbxnX"
+          style="border:none;width:100%;"
           scrolling="no"
-          title="Schedule your free painting estimate"
-          loading="lazy">
+          id="UbYQqZBNDnJzQhLnbxnX-cta"
+          title="survey">
         </iframe>
       </div>
       <p class="form-privacy">🔒 Your information is private and never shared.</p>
@@ -1058,11 +1130,20 @@
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
   <div class="container footer-inner">
-    <p class="footer-copy">© 2025 Husky Pro Painting. All rights reserved. Redding, CA.</p>
+    <p class="footer-copy">© 2026 Husky Pro Painting. All rights reserved. Redding, CA.</p>
     <div class="footer-meta">
-      <div class="footer-meta-item">🏅 <span>Lic# 1131340</span></div>
-      <div class="footer-meta-item">📍 <span>Redding &amp; Shasta County, CA</span></div>
-      <div class="footer-meta-item">📞 <a href="tel:+15307776573" style="color:var(--orange);font-weight:700">(530) 777-6573</a></div>
+      <div class="footer-meta-item">
+        <img src="../images/icon-footer1.png" alt="" class="footer-icon" width="18" height="18">
+        <span>Lic# 1131340</span>
+      </div>
+      <div class="footer-meta-item">
+        <img src="../images/icon-footer2.png" alt="" class="footer-icon" width="18" height="18">
+        <span>Redding &amp; Shasta County, CA</span>
+      </div>
+      <div class="footer-meta-item">
+        <img src="../images/icon-footer3.png" alt="" class="footer-icon" width="18" height="18">
+        <a href="tel:+15307776573" style="color:var(--orange);font-weight:700">(530) 777-6573</a>
+      </div>
     </div>
   </div>
 </footer>
