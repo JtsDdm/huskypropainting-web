@@ -176,7 +176,14 @@
 }
 
 /* ── SERVICES ───────────────────────────────────────────── */
-#services { padding: var(--section-padding) 0; background: #f7f7f7; }
+#services {
+  padding: var(--section-padding) 0;
+  background-color: #f5f3f0;
+  background-image: url('../images/bg-services-texture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: soft-light;
+}
 
 #services .section-header { margin-bottom: 56px; }
 
@@ -219,7 +226,29 @@
 .service-card.featured::before { display: none; }
 .service-card.featured:hover { box-shadow: 0 4px 24px rgba(249,99,2,.3); }
 
-.service-icon { font-size: 36px; margin-bottom: 20px; display: block; }
+/* Legacy emoji icon - hidden, replaced by .service-icon-wrap */
+.service-icon { display: none; }
+
+/* Ideogram icon wrapper */
+.service-icon-wrap {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: #2563EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.service-icon-img {
+  width: 44px; height: 44px;
+  mix-blend-mode: screen;
+  display: block;
+}
+.service-card.featured .service-icon-wrap {
+  background: rgba(255,255,255,.18);
+}
 
 .service-num {
   position: absolute;
@@ -273,7 +302,15 @@
 .service-link:hover { gap: 12px; }
 
 /* ── WHY US ─────────────────────────────────────────────── */
-#why { padding: var(--section-padding) 0; background: #ffffff; }
+#why {
+  padding: var(--section-padding) 0;
+  background-color: #ffffff;
+  background-image: url('../images/bg-why-texture.jpg');
+  background-size: 48% auto;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+}
 
 .why-layout {
   display: grid;
@@ -346,15 +383,21 @@
 .why-item { display: flex; gap: 20px; }
 
 .why-item-icon {
-  width: 48px; height: 48px;
-  border-radius: var(--radius-sm);
-  background: rgba(249,99,2,.08);
-  border: 1px solid rgba(249,99,2,.2);
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #2563EB;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.why-icon-img {
+  width: 32px; height: 32px;
+  mix-blend-mode: screen;
+  display: block;
 }
 
 .why-item-title {
@@ -903,6 +946,126 @@ footer {
   gap: 16px;
 }
 
+/* ── TRUST BAR — IDEOGRAM ICONS ─────────────────────────── */
+.trust-icon-img {
+  width: 26px; height: 26px;
+  mix-blend-mode: screen;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* ── GALLERY ─────────────────────────────────────────────── */
+#gallery {
+  padding: var(--section-padding) 0;
+  background: #111318;
+}
+
+#gallery .section-tag {
+  color: rgba(255,255,255,.65);
+  padding: 4px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.07);
+}
+
+#gallery .section-title { color: #ffffff; }
+#gallery .section-title span { color: var(--orange); }
+
+.gallery-sub {
+  color: rgba(255,255,255,.5);
+  font-size: 16px;
+  line-height: 1.65;
+  margin-top: 14px;
+  max-width: 480px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 48px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #1e2024;
+}
+
+.gallery-item::before {
+  content: '';
+  display: block;
+  padding-top: 75%;
+}
+
+.gallery-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.25,.46,.45,.94), filter .4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.07);
+  filter: brightness(1.1) saturate(1.1);
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(249,99,2,.4) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gallery-item:hover::after { opacity: 1; }
+
+/* Hero-size first item */
+.gallery-item:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Wide items for visual rhythm */
+.gallery-item:nth-child(7)  { grid-column: span 2; }
+.gallery-item:nth-child(13) { grid-column: span 2; }
+
+.gallery-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(255,255,255,.3);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.btn-outline-white:hover {
+  border-color: var(--orange);
+  background: rgba(249,99,2,.12);
+}
+
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 900px) {
   /* Mobile: degradado de arriba→abajo, imagen centrada en la casa */
@@ -920,11 +1083,15 @@ footer {
   .hero-content { max-width: 100%; }
   .hero-stripe { width: 100%; opacity: .15; clip-path: none; }
   .why-layout  { grid-template-columns: 1fr; gap: 48px; }
+  #why { background-size: 100% auto; background-position: top center; background-blend-mode: luminosity; }
   .why-badge-float { right: 0; bottom: -16px; }
   .contact-layout  { grid-template-columns: 1fr; gap: 48px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
   .process-steps::before { display: none; }
+  /* Gallery tablet */
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 5px; }
+  .gallery-item:nth-child(13) { grid-column: span 1; }
 }
 
 @media (max-width: 600px) {
@@ -936,4 +1103,8 @@ footer {
   .hero-stats { gap: 24px; }
   .trust-divider { display: none; }
   .why-badge-float { display: none; }
+  /* Gallery mobile */
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+  .gallery-item:nth-child(1) { grid-column: 1 / -1; grid-row: span 1; }
+  .gallery-item:nth-child(7)  { grid-column: span 1; }
 }
