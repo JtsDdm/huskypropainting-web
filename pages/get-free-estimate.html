@@ -712,12 +712,14 @@
       filter: invert(47%) sepia(99%) saturate(712%) hue-rotate(351deg) brightness(103%);
     }
     .cta-form-card {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 32px 28px;
-      box-shadow: 0 16px 48px rgba(0,0,0,.25);
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
     }
-    .cta-form-card .form-card-title { font-size: 22px; }
+    .cta-form-card .form-card-title { font-size: 22px; color: #ffffff; }
+    .cta-form-card .form-card-sub { color: rgba(255,255,255,0.7); }
+    .cta-form-card .form-card-sub strong { color: #ffffff; }
 
     /* ── FOOTER ─────────────────────────────── */
     footer {
