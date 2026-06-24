@@ -18,10 +18,8 @@ gtag('js', new Date());
 gtag('config', 'G-CPGRKPT6ZS');
 
 // ── GOOGLE ADS ─────────────────────────────────────────────
-// TODO: replace AW-XXXXXXXXX with your Google Ads account ID
-//       replace CONVERSION_LABEL with your conversion action label
-var ADS_CONVERSION_ID    = 'AW-XXXXXXXXX';
-var ADS_CONVERSION_LABEL = 'CONVERSION_LABEL';
+var ADS_CONVERSION_ID    = 'AW-18235385879';
+var ADS_CONVERSION_LABEL = 'en2mCOuG-78cEJfQp_dD';
 
 gtag('config', ADS_CONVERSION_ID);
 
@@ -69,6 +67,6 @@ window.addEventListener('message', function(e) {
 
   if (isSubmission) {
     gtag('event', 'generate_lead', { event_category: 'form_submission', event_label: 'ghl_estimate_form' });
-    fireAdsConversion();
+    // Conversion fired by GHL automation — do not double-fire here
   }
 });
