@@ -64,7 +64,7 @@
       gap: 10px;
       color: var(--white);
     }
-    .header-logo img { width: auto; height: 48px; border-radius: 50%; }
+    .header-logo img { width: auto; height: 46px; max-width: 62vw; }
     .header-logo-text {
       font-family: var(--font-display);
       font-size: 18px;
@@ -823,6 +823,12 @@
       .header-phone-label { display: none; }
     }
   </style>
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
 </head>
 <body>
 
@@ -830,8 +836,7 @@
 <header>
   <div class="container header-inner">
     <div class="header-logo">
-      <img src="../images/Branding/lobo.png" alt="Husky Pro Painting logo" width="32" height="44">
-      <div class="header-logo-text">Husky <span>Pro</span><br>Painting</div>
+      <img src="../images/Branding/logo-horizontal.png" alt="Husky Pro Painting logo" class="header-logo-img" width="124" height="44">
     </div>
     <a href="tel:+15307776573" class="header-phone" aria-label="Call us at (530) 777-6573">
       <div class="header-phone-icon">
