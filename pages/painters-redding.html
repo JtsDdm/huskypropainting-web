@@ -307,7 +307,7 @@
 
     /* ── PROMO SECTION ──────────────────────── */
     #promo {
-      background: var(--dark2);
+      background: #14151b;
       padding: 56px 0;
       position: relative;
       overflow: hidden;
@@ -318,13 +318,13 @@
       background-image: url('../images/bg-promo-texture.jpg');
       background-size: cover;
       background-position: center;
-      opacity: .30;
+      opacity: .18;
       z-index: 0;
     }
     #promo .container { position: relative; z-index: 1; }
     .promo-inner {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.15fr;
       gap: 32px;
       align-items: center;
     }
@@ -356,11 +356,12 @@
     }
     .promo-card {
       background: var(--white);
-      border-radius: 16px;
-      padding: 32px;
+      border-radius: 20px;
+      padding: 42px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,.4), 0 0 45px rgba(255,255,255,.18);
     }
     .promo-card::before {
       content: '';
@@ -374,76 +375,30 @@
       background: var(--orange);
       color: var(--white);
       font-family: var(--font-display);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 800;
       letter-spacing: .12em;
       text-transform: uppercase;
-      padding: 5px 14px;
+      padding: 7px 18px;
       border-radius: 100px;
-      margin-bottom: 16px;
+      margin-bottom: 28px;
     }
-    .promo-sqft {
-      font-family: var(--font-display);
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--gray);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 4px;
-    }
-    .promo-sqft-num {
-      font-family: var(--font-display);
-      font-size: 52px;
-      font-weight: 900;
-      color: var(--dark);
-      line-height: 1;
-      margin-bottom: 2px;
-    }
-    .promo-sqft-label {
-      font-size: 14px;
-      color: var(--gray);
-      margin-bottom: 20px;
-    }
-    .promo-price-label {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-bottom: 4px;
-    }
-    .promo-price {
-      font-family: var(--font-display);
-      font-size: 56px;
-      font-weight: 900;
-      color: var(--orange);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .promo-price sup { font-size: 28px; vertical-align: super; }
-    .promo-includes {
-      font-size: 13px;
-      color: var(--gray);
-      margin-bottom: 20px;
-    }
-    .promo-includes strong { color: var(--dark); }
     .promo-checks {
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 9px;
       text-align: left;
-      margin-bottom: 24px;
+      margin-bottom: 30px;
     }
     .promo-check {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 13px;
+      gap: 10px;
+      font-size: 16px;
       color: var(--dark);
       font-weight: 500;
     }
-    .promo-check-icon { color: var(--orange); font-size: 15px; }
+    .promo-check-icon { color: var(--orange); font-size: 18px; }
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -451,12 +406,12 @@
       background: var(--orange);
       color: var(--white);
       font-family: var(--font-display);
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 800;
       letter-spacing: .06em;
       text-transform: uppercase;
-      padding: 16px 32px;
-      border-radius: 8px;
+      padding: 19px 38px;
+      border-radius: 10px;
       border: none;
       cursor: pointer;
       transition: background .2s, transform .15s;
@@ -479,7 +434,7 @@
       background-image: url('../images/bg-ourwork-pattern.png');
       background-size: 220px 220px;
       background-repeat: repeat;
-      opacity: .30;
+      opacity: .12;
       z-index: 0;
     }
     #transformations .container { position: relative; z-index: 1; }
@@ -514,7 +469,7 @@
     .gallery-item {
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
       position: relative;
     }
     .gallery-item img {
@@ -995,25 +950,19 @@ function gtag_report_conversion(url) {
   <div class="promo-bg-texture" aria-hidden="true"></div>
   <div class="container promo-inner">
     <div class="promo-text">
-      <span class="section-tag">Special Promotion</span>
-      <h2>Premium Paint.<br><span>Honest Price.</span></h2>
-      <p>We use Sherwin-Williams SuperPaint® on every exterior job — a premium 100% acrylic paint rated for Northern California's extreme heat and UV exposure. No hidden fees, no surprises on your final bill.</p>
+      <span class="section-tag">Protect Your Investment</span>
+      <h2>Your Home Is Your Biggest<br><span>Investment. Protect It.</span></h2>
+      <p>Northern California's heat and UV don't just fade paint — they break down siding, trim, and stucco underneath it. A professional repaint isn't a cosmetic fix, it's protection for the asset you've worked years to build.</p>
     </div>
     <div class="promo-card">
-      <span class="promo-badge">Special Promotion</span>
-      <div class="promo-sqft">Houses up to</div>
-      <div class="promo-sqft-num">1,000</div>
-      <div class="promo-sqft-label">Square feet</div>
-      <div class="promo-price-label">Starting at only</div>
-      <div class="promo-price"><sup>$</sup>4,850</div>
-      <div class="promo-includes">Includes <strong>paint &amp; labor</strong></div>
+      <span class="promo-badge">Why Homeowners Trust Us</span>
       <div class="promo-checks">
-        <div class="promo-check"><span class="promo-check-icon">✓</span> Sherwin-Williams SuperPaint® included</div>
-        <div class="promo-check"><span class="promo-check-icon">✓</span> Full surface prep &amp; priming</div>
-        <div class="promo-check"><span class="promo-check-icon">✓</span> Two finish coats</div>
+        <div class="promo-check"><span class="promo-check-icon">✓</span> Sherwin-Williams SuperPaint® — built for extreme heat &amp; UV</div>
+        <div class="promo-check"><span class="promo-check-icon">✓</span> Full surface prep &amp; priming — stops damage before it starts</div>
+        <div class="promo-check"><span class="promo-check-icon">✓</span> Two finish coats for lasting protection</div>
         <div class="promo-check"><span class="promo-check-icon">✓</span> 5-year workmanship warranty</div>
       </div>
-      <a href="#estimate-form" class="btn-primary">Claim This Offer →</a>
+      <a href="#estimate-form" class="btn-primary">Protect My Home — Get My Free Estimate →</a>
     </div>
   </div>
 </section>
