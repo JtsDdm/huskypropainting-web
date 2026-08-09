@@ -57,14 +57,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      min-width: 0;
     }
     .header-logo {
       display: flex;
       align-items: center;
       gap: 10px;
       color: var(--white);
+      flex-shrink: 0;
     }
-    .header-logo img { width: auto; height: 46px; max-width: 62vw; }
+    .header-logo img { width: auto; height: 46px; max-width: 62vw; display: block; }
     .header-logo-text {
       font-family: var(--font-display);
       font-size: 18px;
@@ -74,10 +82,53 @@
       letter-spacing: .04em;
     }
     .header-logo-text span { color: var(--orange); }
+
+    /* Desktop nav — anchor links + About Us */
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .header-nav a {
+      position: relative;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 6px 0;
+      transition: color .2s;
+    }
+    .header-nav a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 2px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .22s ease;
+    }
+    .header-nav a:hover,
+    .header-nav a:focus-visible { color: var(--white); }
+    .header-nav a:hover::after,
+    .header-nav a:focus-visible::after { transform: scaleX(1); }
+
+    /* Right cluster — phone + CTA + burger */
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
     .header-phone {
       display: flex;
       align-items: center;
       gap: 10px;
+      text-decoration: none;
     }
     .header-phone-label {
       font-family: var(--font-display);
@@ -107,6 +158,92 @@
       height: 100%;
       object-fit: cover;
       display: block;
+    }
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--orange);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 11px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .2s, transform .15s;
+    }
+    .header-cta:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+    }
+
+    /* Burger — mobile only */
+    .header-burger {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 8px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .header-burger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    .header-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .header-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .header-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile dropdown panel */
+    .header-mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--dark2);
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 4px 24px 18px;
+    }
+    .header-mobile-nav.is-open { display: flex; }
+    .header-mobile-nav a {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.9);
+      text-decoration: none;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .header-mobile-nav a:active { color: var(--orange); }
+    .header-mobile-cta {
+      margin-top: 16px;
+      background: var(--orange);
+      color: var(--white) !important;
+      text-align: center;
+      border-radius: 8px;
+      padding: 16px 20px !important;
+      font-weight: 800 !important;
+      border-bottom: none !important;
+    }
+
+    /* Offset anchor targets so the sticky header never covers them */
+    #hero, #estimate-form, #promo, #transformations, #process, #reviews {
+      scroll-margin-top: 92px;
     }
 
     /* ── HERO ───────────────────────────────── */
@@ -808,6 +945,10 @@
       .footer-inner { flex-direction: column; text-align: center; }
       .mobile-cta { display: block; }
       body { padding-bottom: 64px; }
+      /* header: collapse nav + CTA into the burger menu */
+      .header-nav { display: none; }
+      .header-cta { display: none; }
+      .header-burger { display: flex; }
     }
     @media (max-width: 600px) {
       .hero-h1 { padding: 0 20px; }
@@ -820,7 +961,11 @@
       .step-icon-img { width: 64px; height: 64px; }
       .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
       .gallery-item img { height: 180px; }
-      .header-phone-label { display: none; }
+      /* header: logo + phone icon + burger only */
+      .header-logo img { height: 38px; }
+      .header-left { gap: 0; }
+      .header-right { gap: 10px; }
+      .header-phone-text { display: none; }
     }
   </style>
   <!-- Favicon -->
@@ -830,20 +975,6 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <!-- Google Ads click-to-call conversion -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') { window.location = url; }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18235385879/nnNaCPruitEcEJfQp_dD',
-      'value': 1.0,
-      'currency': 'USD',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -858,19 +989,48 @@ function gtag_report_conversion(url) {
 <!-- ═══════════════ HEADER ═══════════════ -->
 <header>
   <div class="container header-inner">
-    <div class="header-logo">
-      <img src="../images/Branding/logo-horizontal.png" alt="Husky Pro Painting logo" class="header-logo-img" width="124" height="44">
+
+    <div class="header-left">
+      <a href="#hero" class="header-logo" aria-label="Husky Pro Painting — back to top">
+        <img src="../images/Branding/logo-horizontal.png" alt="Husky Pro Painting logo" class="header-logo-img" width="124" height="44">
+      </a>
+
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#transformations">Our Work</a>
+        <a href="#process">How It Works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="../about.html" target="_blank" rel="noopener">About Us</a>
+      </nav>
     </div>
-    <a href="tel:+15305226431" onclick="return gtag_report_conversion('tel:+15305226431');" class="header-phone" aria-label="Call us at (530) 522-6431">
-      <div class="header-phone-icon">
-        <img src="../images/icon-phone.png" alt="Call Husky Pro Painting" width="42" height="42">
-      </div>
-      <div>
-        <span class="header-phone-label">Call Us Today</span>
-        <span class="header-phone-num">(530) 522-6431</span>
-      </div>
-    </a>
+
+    <div class="header-right">
+      <a href="tel:+15305226431" class="header-phone" aria-label="Call us at (530) 522-6431">
+        <div class="header-phone-icon">
+          <img src="../images/icon-phone.png" alt="" width="42" height="42">
+        </div>
+        <div class="header-phone-text">
+          <span class="header-phone-label">Call Us Today</span>
+          <span class="header-phone-num">(530) 522-6431</span>
+        </div>
+      </a>
+
+      <a href="#estimate-form" class="header-cta">Free Estimate</a>
+
+      <button type="button" class="header-burger" id="header-burger"
+              aria-label="Open menu" aria-expanded="false" aria-controls="header-mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
   </div>
+
+  <nav class="header-mobile-nav" id="header-mobile-nav" aria-label="Mobile navigation">
+    <a href="#transformations">Our Work</a>
+    <a href="#process">How It Works</a>
+    <a href="#reviews">Reviews</a>
+    <a href="../about.html" target="_blank" rel="noopener">About Us</a>
+    <a href="#estimate-form" class="header-mobile-cta">Get My Free Estimate</a>
+  </nav>
 </header>
 
 <!-- ═══════════════ HERO ═══════════════ -->
@@ -1150,7 +1310,7 @@ function gtag_report_conversion(url) {
     <div class="cta-text">
       <h2>Ready to<br>Transform<br>Your Home?</h2>
       <p>Fill out the form to schedule your free estimate. We'll visit your property and deliver a detailed written quote — no pressure, no obligation.</p>
-      <a href="tel:+15305226431" onclick="return gtag_report_conversion('tel:+15305226431');" class="cta-phone">
+      <a href="tel:+15305226431" class="cta-phone">
         <div class="cta-phone-icon">
           <img src="../images/icon-footer3.png" alt="Call now" width="36" height="36">
         </div>
@@ -1190,7 +1350,7 @@ function gtag_report_conversion(url) {
 <footer>
   <div class="container footer-inner">
     <p class="footer-copy">© 2026 Husky Pro Painting. All rights reserved. Redding, CA.</p>
-      <p class="footer-copy">6970 Westside Rd 13 A, Redding, CA 96001, United States &middot; <a href="mailto:info@huskypropainting.com" style="color:var(--orange)">info@huskypropainting.com</a> &middot; <a href="tel:+15305226431" onclick="return gtag_report_conversion('tel:+15305226431');" style="color:var(--orange)">(530) 522-6431</a> &middot; CSLB #1131340</p>
+      <p class="footer-copy">6970 Westside Rd 13 A, Redding, CA 96001, United States &middot; <a href="mailto:info@huskypropainting.com" style="color:var(--orange)">info@huskypropainting.com</a> &middot; <a href="tel:+15305226431" style="color:var(--orange)">(530) 522-6431</a> &middot; CSLB #1131340</p>
     <div class="footer-meta">
       <div class="footer-meta-item">
         <img src="../images/icon-footer1.png" alt="" class="footer-icon" width="18" height="18">
@@ -1202,7 +1362,7 @@ function gtag_report_conversion(url) {
       </div>
       <div class="footer-meta-item">
         <img src="../images/icon-footer3.png" alt="" class="footer-icon" width="18" height="18">
-        <a href="tel:+15305226431" onclick="return gtag_report_conversion('tel:+15305226431');" style="color:var(--orange);font-weight:700">(530) 522-6431</a>
+        <a href="tel:+15305226431" style="color:var(--orange);font-weight:700">(530) 522-6431</a>
       </div>
     </div>
   </div>
@@ -1210,12 +1370,44 @@ function gtag_report_conversion(url) {
 
 <!-- ═══════════════ MOBILE STICKY CTA ═══════════════ -->
 <div class="mobile-cta">
-  <a href="tel:+15305226431" onclick="return gtag_report_conversion('tel:+15305226431');">
+  <a href="tel:+15305226431">
     📞 Call Now for Your Free Estimate — (530) 522-6431
   </a>
 </div>
 
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<script>
+/* ── HEADER BURGER MENU ─────────────────────────────── */
+(function () {
+  var burger = document.getElementById('header-burger');
+  var panel  = document.getElementById('header-mobile-nav');
+  if (!burger || !panel) return;
+
+  function setOpen(open) {
+    panel.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
+  burger.addEventListener('click', function () {
+    setOpen(!panel.classList.contains('is-open'));
+  });
+
+  // Close after tapping any link so the anchor scroll is visible
+  panel.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setOpen(false);
+  });
+
+  // Reset state if the viewport grows back to desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) setOpen(false);
+  });
+})();
+</script>
 <script src="../js/gclid-capture.js"></script>
 <!-- Floating WhatsApp button -->
 <style>

@@ -1,7 +1,15 @@
 /* ============================================================
    HUSKY PRO PAINTING — analytics.js
    Google Analytics 4: G-CPGRKPT6ZS
-   Google Ads: AW-XXXXXXXXX (replace with real ID)
+   Google Ads:         AW-18235385879
+
+   Conversion labels in use (all "Website" type in the Ads account):
+     nnNaCPruitEcEJfQp_dD  — Phone call  → fired here, on any tel: click
+     blU9CIH9usgcEJfQp_dD  — Form sent   → fired inline in /thank-you.html
+
+   This file is the ONLY place a phone-call conversion is fired. Do not add
+   an onclick="gtag_report_conversion(...)" to tel: links — that fires a
+   second time and blocks the dialer while it waits for the callback.
    ============================================================ */
 
 // ── GA4 ────────────────────────────────────────────────────
@@ -18,14 +26,16 @@ gtag('js', new Date());
 gtag('config', 'G-CPGRKPT6ZS');
 
 // ── GOOGLE ADS ─────────────────────────────────────────────
-var ADS_CONVERSION_ID    = 'AW-18235385879';
-var ADS_CONVERSION_LABEL = 'en2mCOuG-78cEJfQp_dD';
+var ADS_CONVERSION_ID  = 'AW-18235385879';
+var ADS_LABEL_PHONE    = 'nnNaCPruitEcEJfQp_dD';   // "Phone call" conversion action
 
 gtag('config', ADS_CONVERSION_ID);
 
-function fireAdsConversion() {
+function firePhoneConversion() {
   gtag('event', 'conversion', {
-    send_to: ADS_CONVERSION_ID + '/' + ADS_CONVERSION_LABEL
+    send_to: ADS_CONVERSION_ID + '/' + ADS_LABEL_PHONE,
+    value: 1.0,
+    currency: 'USD'
   });
 }
 
@@ -40,11 +50,13 @@ function fireAdsConversion() {
 })();
 
 // ── PHONE CLICK TRACKING ───────────────────────────────────
+// Covers every tel: link on every page. The click is never cancelled, so the
+// dialer opens natively even if the Ads tag is blocked or slow to respond.
 document.addEventListener('click', function(e) {
   var el = e.target.closest('a[href^="tel:"]');
   if (el) {
     gtag('event', 'generate_lead', { event_category: 'phone_call', event_label: el.href });
-    fireAdsConversion();
+    firePhoneConversion();
   }
 });
 

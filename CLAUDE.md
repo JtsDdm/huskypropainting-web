@@ -14,8 +14,18 @@ Expert in technical SEO and high-conversion landing pages. Pure HTML/CSS/JS — 
 ## Brand
 - Primary color: `--orange: #F96302`
 - Fonts: Barlow Condensed (headings) + Barlow (body)
-- Phone: (530) 777-6573
 - License: CSLB #1131340
+
+### ⚠️ Two phone numbers — do not mix them
+| Number | Used on | Purpose |
+|---|---|---|
+| **(530) 777-6573** `tel:+15307776573` | Organic site: `index.html`, service pages, location pages, blog, WhatsApp link on landings | Main business line |
+| **(530) 522-6431** `tel:+15305226431` | **Paid landing pages only** (the 5 listed below) | AI phone agent / call tracking for Google Ads |
+
+Never swap one for the other. The organic number on a paid landing breaks call attribution;
+the tracking number on an organic page sends real customers to the AI agent.
+WhatsApp on the landings intentionally points to the main number: `https://wa.me/15307776573`.
+
 - Logo: `/images/Branding/lobo.png` — husky head, orange flat on white (portrait)
 - Logo circular: `/images/Branding/logo-circular.png` — circular badge version (generated)
 
@@ -23,14 +33,14 @@ Expert in technical SEO and high-conversion landing pages. Pure HTML/CSS/JS — 
 In the shared CSS (`/css/`), variable names are INVERTED:
 - `--black` = white (#ffffff)
 - `--white` and `--light` = dark (#1a1a1a)
-**This does NOT apply to `/pages/get-free-estimate.html`** — that page has its own self-contained CSS with normal variable names (`--white: #ffffff`, `--dark: #111318`).
+**This does NOT apply to the 5 paid landing pages** — each is self-contained with normal variable names (`--white: #ffffff`, `--dark: #111318`).
 
 ## File Structure
 ```
-/pages/          — service + location pages (use shared /css/ and /js/)
+/pages/          — service + location pages (shared /css/ + /js/) AND the 5 paid landings (self-contained)
 /blog/           — articles
 /css/            — variables.css → base.css → nav.css → sections.css
-/js/             — analytics.js, main.js
+/js/             — analytics.js, main.js, gclid-capture.js
 /images/         — max 200kb each (see image map below)
 /images/Branding/— logo files
 /pics/           — original client photos (batch 1)
@@ -42,15 +52,48 @@ In the shared CSS (`/css/`), variable names are INVERTED:
 | Integration | Status | Details |
 |---|---|---|
 | GA4 | ✅ Live | ID: `G-CPGRKPT6ZS` — in `js/analytics.js` |
-| Google Ads | ⏳ Pending | Replace `AW-XXXXXXXXX` and `CONVERSION_LABEL` in `js/analytics.js` |
-| Meta Pixel | ⏳ Pending | Uncomment and replace `PIXEL_ID` in `js/analytics.js` |
-| GHL CRM | ✅ Live | Survey widget ID: `UbYQqZBNDnJzQhLnbxnX` (iframe in landing page) |
+| Google Ads | ✅ Live | ID `AW-18235385879`, conversion label `en2mCOuG-78cEJfQp_dD` in `js/analytics.js`. Landings also hardcode the gtag snippet in `<head>` |
+| Meta Pixel | ❌ Not implemented | No Meta code in `js/analytics.js` (the README reference to `PIXEL_ID` is stale) |
+| GHL CRM | ✅ Live | **Form** widget ID: `BCBxB8UhwNJGJPzIodqH` — used by all 5 landings. Chat widget loader on `index.html` |
 | Ideogram API | ✅ Live | Key in `.env` as `IDEOGRAM_API_KEY` |
 
-## Landing Page — `/pages/get-free-estimate.html`
-Standalone page (self-contained CSS, no shared stylesheets). Used for paid traffic (Google Ads). `noindex, nofollow`.
+### Conversion tracking — how it fires (`js/analytics.js`)
+- **Phone clicks**: any `a[href^="tel:"]` click → GA4 `generate_lead` + Google Ads conversion (`fireAdsConversion()`).
+- **Form submits**: listens for the `postMessage` LeadConnector sends from the iframe → GA4 `generate_lead` only. The Ads conversion for forms is fired by GHL automation server-side — **do not add a client-side fire here or it double-counts**.
+- **UTM/gclid capture**: UTMs + gclid saved to `sessionStorage` for CRM attribution across navigation.
+- **`js/gclid-capture.js`**: appends `?gclid=` to the GHL iframe `src` so the click ID reaches the CRM. Loaded only by the 5 landings. It targets the iframe by the widget ID `BCBxB8UhwNJGJPzIodqH` — **if the GHL widget ID ever changes, this file must be updated too or gclid attribution silently breaks**.
 
-### Sections in order:
+## ⚠️ Indexation Rules — read before touching `sitemap.xml`
+The 5 paid landing pages are `noindex, nofollow` **on purpose** and must NEVER be added to `sitemap.xml`.
+Listing a noindex URL in the sitemap sends Google contradictory signals and triggers
+"Submitted URL marked noindex" errors in Search Console.
+
+- Paid landings: `noindex, nofollow`, **no** canonical tag, **not** in sitemap, no internal links from indexable pages (they are intentionally orphaned — traffic arrives from ads).
+- Organic pages: indexable, self-referencing canonical, in sitemap, internally linked.
+- Do **not** add `Disallow:` to `robots.txt` for the landings — blocking crawl would stop Google from ever reading the `noindex`.
+
+Their keywords (painters redding, house painters redding, etc.) are already targeted organically by
+`pages/redding-ca.html` and the service pages. Indexing the landings would cannibalize those.
+
+## Paid Landing Pages — 6 total
+Standalone pages (self-contained CSS, no shared stylesheets, no site nav). Google Ads traffic only.
+All are `noindex, nofollow`, use the **(530) 522-6431** tracking number, embed the GHL form
+`BCBxB8UhwNJGJPzIodqH`, load `js/gclid-capture.js`, and carry a WhatsApp button to the main number.
+
+| Page | H1 | Ad group / keyword |
+|---|---|---|
+| `get-free-estimate.html` | Transform Your Home. Boost Your Curb Appeal. | Generic / offer-led |
+| `painters-redding.html` | Redding's Trusted Painters. | painters redding |
+| `house-painters-redding.html` | House Painters in Redding, CA. | house painters redding |
+| `exterior-painters-redding.html` | Exterior Painters in Redding, CA. | exterior painters redding |
+| `painting-contractors-redding.html` | Painting Contractors in Redding CA. | painting contractors redding |
+| `painting-company-redding.html` | Redding Painting Company. | painting company redding |
+
+The 5 keyword landings are structural clones of `get-free-estimate.html` — same sections, same CSS,
+only the H1, title, meta description and hero copy differ. **Change one, and check whether the
+other five need the same change** (there is no shared stylesheet to propagate it for you).
+
+### Sections in order (identical across all 5):
 1. **Header** — sticky, dark bg, `lobo.png` logo, phone number + icon
 2. **Hero** — dark bg, `lp-hero.jpg` at `opacity:.18`, lead form (GHL survey)
 3. **Trust Bar** — orange bg, 4 items with Ideogram-generated icons (`icon-trust1–4.png`)
@@ -65,12 +108,15 @@ Standalone page (self-contained CSS, no shared stylesheets). Used for paid traff
 ### Icon technique (trust bar + footer):
 Icons are white-on-black PNGs from Ideogram. Use `mix-blend-mode: screen` to make the black bg transparent and keep white icons visible on any colored background.
 
-### Form embed:
+### Form embed (current — GHL **form**, not survey):
 ```html
-<iframe src="https://api.leadconnectorhq.com/widget/survey/UbYQqZBNDnJzQhLnbxnX"
-  style="border:none;width:100%;" scrolling="no" title="survey"></iframe>
+<iframe src="https://api.leadconnectorhq.com/widget/form/BCBxB8UhwNJGJPzIodqH"
+  id="inline-BCBxB8UhwNJGJPzIodqH"
+  style="border:none;width:100%;" scrolling="no" title="Free Estimate"></iframe>
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 ```
+The `id` matters: `js/gclid-capture.js` looks it up to inject the gclid.
+(The old survey widget `UbYQqZBNDnJzQhLnbxnX` is no longer used anywhere.)
 
 ## Image Map — `/images/`
 ### Landing page photos (real job photos from `/pics2/`, compressed ≤200kb)
@@ -117,7 +163,7 @@ After download, compress with: `sips -Z 900 input.png --out output.png && sips -
 
 ## Technical Rules
 - No frameworks or external dependencies
-- Keep `robots.txt` and `sitemap.xml` updated when adding pages
+- Keep `robots.txt` and `sitemap.xml` updated when adding pages — **but only indexable pages go in the sitemap** (see Indexation Rules above)
 - Every new location page needs its own LocalBusiness Schema (see schema template below)
 - Every new service page needs FAQ schema
 - Images: max 200kb each — use `sips` on macOS to compress
@@ -146,30 +192,40 @@ After download, compress with: `sips -Z 900 input.png --out output.png && sips -
 
 ## Conversion Rules
 - Primary CTA: phone call button — always visible on mobile
-- Secondary CTA: GHL survey form (widget ID: `UbYQqZBNDnJzQhLnbxnX`)
+- Secondary CTA: GHL form (widget ID: `BCBxB8UhwNJGJPzIodqH`)
 - Every page ends with a CTA section before footer
+- Use the right phone number for the page type (see Brand section) — this is the single easiest thing to get wrong
 
 ## Pages — Status
-| Page | Status | Notes |
-|---|---|---|
-| `index.html` | ✅ Live | Homepage |
-| `pages/get-free-estimate.html` | ✅ Live | Paid traffic landing page |
-| `pages/exterior-painting.html` | ✅ Live | Service page |
-| `pages/interior-painting.html` | ✅ Live | Service page |
-| `pages/commercial-painting.html` | ✅ Live | Service page |
-| `pages/redding-ca.html` | ✅ Live | Location page |
-| `pages/anderson-ca.html` | ✅ Live | Location page |
-| `pages/palo-cedro-ca.html` | ✅ Live | Location page |
-| `pages/shasta-lake-ca.html` | ✅ Live | Location page |
-| `pages/cottonwood-ca.html` | ✅ Live | Location page |
-| `pages/red-bluff-ca.html` | ✅ Live | Location page |
-| `pages/chico-ca.html` | ✅ Live | Location page |
-| `pages/bella-vista-ca.html` | ✅ Live | Location page |
-| `pages/shasta-ca.html` | ✅ Live | Location page |
-| `pages/lake-redding-ca.html` | ✅ Live | Location page |
-| `about.html` | ✅ Exists | Needs Chris photos + license copy |
-| `gallery.html` | ✅ Exists | Needs real photos populated |
-| `reviews.html` | ✅ Exists | Needs structured data |
-| `faq.html` | ⏳ Needed | FAQ schema, featured snippets |
-| `privacy.html` | ✅ Exists | — |
-| `terms.html` | ✅ Exists | — |
+Indexed = in `sitemap.xml`. Landings are deliberately excluded.
+
+| Page | Status | Indexed | Notes |
+|---|---|---|---|
+| `index.html` | ✅ Live | ✅ | Homepage |
+| `pages/get-free-estimate.html` | ✅ Live | 🚫 noindex | Paid landing — generic offer |
+| `pages/painters-redding.html` | ✅ Live | 🚫 noindex | Paid landing — "painters redding" |
+| `pages/house-painters-redding.html` | ✅ Live | 🚫 noindex | Paid landing — "house painters redding" |
+| `pages/exterior-painters-redding.html` | ✅ Live | 🚫 noindex | Paid landing — "exterior painters redding" |
+| `pages/painting-contractors-redding.html` | ✅ Live | 🚫 noindex | Paid landing — "painting contractors redding" |
+| `pages/painting-company-redding.html` | ✅ Live | 🚫 noindex | Paid landing — "painting company redding" |
+| `thank-you.html` | ✅ Live | 🚫 noindex | Post-submission page |
+| `pages/exterior-painting.html` | ✅ Live | ✅ | Service page |
+| `pages/interior-painting.html` | ✅ Live | ✅ | Service page |
+| `pages/commercial-painting.html` | ✅ Live | ✅ | Service page |
+| `pages/redding-ca.html` | ✅ Live | ✅ | Location page — full LocalBusiness + FAQPage schema, ~1,300 words. Use as the template for new location pages |
+| `pages/anderson-ca.html` | ✅ Live | ✅ | Location page |
+| `pages/palo-cedro-ca.html` | ✅ Live | ✅ | Location page |
+| `pages/shasta-lake-ca.html` | ✅ Live | ✅ | Location page |
+| `pages/cottonwood-ca.html` | ✅ Live | ✅ | Location page |
+| `pages/red-bluff-ca.html` | ✅ Live | ✅ | Location page |
+| `pages/chico-ca.html` | ✅ Live | ✅ | Location page |
+| `pages/bella-vista-ca.html` | ✅ Live | ✅ | Location page |
+| `pages/shasta-ca.html` | ✅ Live | ✅ | Location page |
+| `pages/lake-redding-ca.html` | ✅ Live | ✅ | Location page |
+| `blog/` + 6 articles | ✅ Live | ✅ | Index + 6 posts |
+| `about.html` | ✅ Exists | ✅ | Needs Chris photos + license copy |
+| `gallery.html` | ✅ Exists | ✅ | Needs real photos populated |
+| `reviews.html` | ✅ Exists | ✅ | Needs structured data |
+| `faq.html` | ⏳ Needed | — | FAQ schema, featured snippets |
+| `privacy.html` | ✅ Exists | ✅ | — |
+| `terms.html` | ✅ Exists | ✅ | — |

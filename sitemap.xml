@@ -126,31 +126,11 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- LANDING PAGES SEO — keyword targeting Redding CA -->
-  <url>
-    <loc>https://huskypropainting.com/pages/exterior-painters-redding.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://huskypropainting.com/pages/house-painters-redding.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://huskypropainting.com/pages/painters-redding.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://huskypropainting.com/pages/painting-contractors-redding.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- NOTA: las landing pages de tráfico pagado (/pages/get-free-estimate.html,
+       painters-redding, house-painters-redding, exterior-painters-redding,
+       painting-contractors-redding, painting-company-redding) son noindex,nofollow
+       a propósito.
+       NO añadirlas aquí — sitemap + noindex son señales contradictorias. -->
 
   <!-- BLOG -->
   <url>
