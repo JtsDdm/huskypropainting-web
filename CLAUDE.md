@@ -52,13 +52,17 @@ In the shared CSS (`/css/`), variable names are INVERTED:
 | Integration | Status | Details |
 |---|---|---|
 | GA4 | ✅ Live | ID: `G-CPGRKPT6ZS` — in `js/analytics.js` |
-| Google Ads | ✅ Live | ID `AW-18235385879`, conversion label `en2mCOuG-78cEJfQp_dD` in `js/analytics.js`. Landings also hardcode the gtag snippet in `<head>` |
+| Google Ads | ✅ Live | ID `AW-18235385879` in `js/analytics.js`. Labels: phone `nnNaCPruitEcEJfQp_dD`, form `blU9CIH9usgcEJfQp_dD`. **`js/analytics.js` is the only gtag loader** — no page hardcodes a gtag snippet |
 | Meta Pixel | ❌ Not implemented | No Meta code in `js/analytics.js` (the README reference to `PIXEL_ID` is stale) |
 | GHL CRM | ✅ Live | **Form** widget ID: `BCBxB8UhwNJGJPzIodqH` — used by all 5 landings. Chat widget loader on `index.html` |
 | Ideogram API | ✅ Live | Key in `.env` as `IDEOGRAM_API_KEY` |
 
 ### Conversion tracking — how it fires (`js/analytics.js`)
-- **Phone clicks**: any `a[href^="tel:"]` click → GA4 `generate_lead` + Google Ads conversion (`fireAdsConversion()`).
+Every page loads `js/analytics.js` as the **first tag inside `<head>`**, and it is the single place
+gtag.js is loaded and configured (GA4 `G-CPGRKPT6ZS` + Ads `AW-18235385879`).
+**Never re-add an inline `gtag('config', 'AW-…')` snippet to a page** — it double-fires the Ads
+page_view and loads gtag.js twice.
+- **Phone clicks**: any `a[href^="tel:"]` click → GA4 `generate_lead` + Google Ads conversion (`firePhoneConversion()`).
 - **Form submits**: listens for the `postMessage` LeadConnector sends from the iframe → GA4 `generate_lead` only. The Ads conversion for forms is fired by GHL automation server-side — **do not add a client-side fire here or it double-counts**.
 - **UTM/gclid capture**: UTMs + gclid saved to `sessionStorage` for CRM attribution across navigation.
 - **`js/gclid-capture.js`**: appends `?gclid=` to the GHL iframe `src` so the click ID reaches the CRM. Loaded only by the 5 landings. It targets the iframe by the widget ID `BCBxB8UhwNJGJPzIodqH` — **if the GHL widget ID ever changes, this file must be updated too or gclid attribution silently breaks**.
