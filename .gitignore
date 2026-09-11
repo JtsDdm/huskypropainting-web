@@ -8,3 +8,7 @@
 
 # Logs
 *.log
+
+# Material bruto del cliente (262MB de video sin comprimir) — los derivados
+# optimizados viven en /images/ como lp-*.jpg y lp-video-*.mp4
+Pics Cris/

@@ -97,17 +97,35 @@ The 5 keyword landings are structural clones of `get-free-estimate.html` — sam
 only the H1, title, meta description and hero copy differ. **Change one, and check whether the
 other five need the same change** (there is no shared stylesheet to propagate it for you).
 
-### Sections in order (identical across all 5):
-1. **Header** — sticky, dark bg, `lobo.png` logo, phone number + icon
+### Sections in order (identical across all 6):
+1. **Header** — sticky, dark bg, `lobo.png` logo, phone number + icon. Nav anchors are all
+   on-page: `#transformations`, `#pricing`, `#process`, `#meet-chris`, `#reviews`.
+   **Never link out to `about.html` from a landing** — it carries the organic number and
+   full site nav, so it leaks the visitor and breaks call attribution.
 2. **Hero** — dark bg, `lp-hero.jpg` at `opacity:.18`, lead form (GHL survey)
 3. **Trust Bar** — orange bg, 4 items with Ideogram-generated icons (`icon-trust1–4.png`)
-4. **Promo** — dark bg, `bg-promo-texture.jpg` at `opacity:.30`, pricing card ($4,850 starting)
-5. **Our Work Gallery** — 6 real photos in 3-col grid, `bg-ourwork-pattern.png` at `opacity:.30`
-6. **How It Works** — dark bg, 5 steps with circular Ideogram icons (`icon-step1–5.png`)
-7. **Reviews** — 3 verified Angi reviews (Randy Lachney, David J., Maria R.)
-8. **Final CTA** — orange bg, phone link + Ideogram icon, second copy of GHL survey form
-9. **Footer** — dark bg, 3 meta items with Ideogram footer icons (`icon-footer1–3.png`)
-10. **Mobile Sticky CTA** — fixed bottom bar, phone number
+4. **Promo** — dark bg, `bg-promo-texture.jpg` at `opacity:.30`
+5. **Case Studies** (`#case-studies`) — white bg, 2 real before/after pairs (`.case-media.is-two`).
+   The `.is-three` CSS rule is still there but unused — case 1 dropped its "during" stage
+6. **Our Work Gallery** (`#transformations`) — 6 real photos in 3-col grid, `bg-ourwork-pattern.png` at `opacity:.30`
+7. **Pricing** (`#pricing`) — white bg, 3 tiers by home size ($4,850 / $6,900 / $9,500 starting),
+   "Every Estimate Includes" list, and an orange-bordered block stating these are starting
+   prices and the binding number always comes from a free on-site estimate.
+   **Keep that disclaimer** — and keep the phone agent's script consistent with it
+   (book the visit, never quote a number over the phone).
+8. **How It Works** — dark bg, 5 steps with circular Ideogram icons (`icon-step1–5.png`)
+9. **Work Videos** (`#work-videos`) — `--dark2` bg, 3 vertical job-site clips (9:16) whose
+   badges tie back to steps 3 and 4 above. **Nothing downloads until the clip scrolls into
+   view** — they ship `preload="none"` + poster, and an IntersectionObserver in the page's
+   inline script calls `play()` at 25% visibility and `pause()` on exit. It falls back to
+   `controls` when autoplay is blocked or `prefers-reduced-motion` is set. Keep the
+   `js-autoplay` class on any clip you add or it will never play.
+10. **Meet Chris** (`#meet-chris`) — gray bg, owner photo + first-person copy + 4 credential
+   cards (CSLB link, liability, workers' comp, owner on site)
+11. **Reviews** — 3 verified Angi reviews (Randy Lachney, David J., Maria R.)
+12. **Final CTA** — orange bg, phone link + Ideogram icon, second copy of GHL survey form
+13. **Footer** — dark bg, 3 meta items with Ideogram footer icons (`icon-footer1–3.png`)
+14. **Mobile Sticky CTA** — fixed bottom bar, phone number
 
 ### Icon technique (trust bar + footer):
 Icons are white-on-black PNGs from Ideogram. Use `mix-blend-mode: screen` to make the black bg transparent and keep white icons visible on any colored background.
@@ -133,6 +151,39 @@ The `id` matters: `js/gclid-capture.js` looks it up to inject the gclid.
 | `lp-work4.jpg` | `1775441996784.jpg` | Tan/olive house — finished result |
 | `lp-work5.jpg` | `1775447038021.jpg` | Teal/aqua house — finished result |
 | `lp-work6.jpg` | `1775165796186.jpg` | Brown house with porch swing |
+
+### Case study + owner photos (from `/Pics Cris/`, cropped with ffmpeg, ≤200kb)
+| File | Source | Content |
+|---|---|---|
+| `lp-chris.jpg` | `Screenshot_20251031_091443_Messages.jpg` | Chris beside the branded van — **cropped at x≥1240 on purpose to cut the (530) 777-6573 painted on the van**; that organic number must not appear on a paid landing. Source is a Messages screenshot, so resolution is limited — ask the client for the original photo |
+| `lp-case1-before.jpg` | `IMG_20260526_100629.jpg` | Case 1 before — dark red wood siding |
+| `lp-case1-during.jpg` | `IMG_20260601_115617.jpg` | Case 1 mid-project — **not used on any page**, kept on disk. Same angle as the "before" with ladders up and the carport already white, so it's the shot that proves before and after are the same property (they're taken from different angles) |
+| `lp-case1-after.jpg` | `IMG_20260605_084759~2.jpg` | Case 1 after — warm greige + white trim |
+| `lp-case2-before.jpg` | `WhatsApp Image 2026-09-10 at 22.04.01.jpeg` | Case 2 before — faded mauve stucco |
+| `lp-case2-after.jpg` | `WhatsApp Image 2026-09-10 at 22.04.57.jpeg` | Case 2 after — terracotta/sand, white columns. **Crop matched to the before shot** (`crop=1005:1340:528:60`) — keep any re-crop matched or the pair stops reading as the same house |
+| `lp-prep-masking.jpg` | `IMG_20260815_130737.jpg` | Masking/prep proof — staged, not yet placed in any section |
+
+### Video assets
+Masters live in `/Pics Cris/VOD_*.mp4` — all 4 **vertical** (1080x1920 via rotation
+metadata), 7–52s, b-roll with no talking head. `VOD_20260829_094051` is unusable (blown-out
+sun flare). The other three ship in `#work-videos`, trimmed and re-encoded:
+
+| File | Master (trim) | Content |
+|---|---|---|
+| `lp-video-prep.mp4` | `VOD_20260822_160815` (0–15s) | Power washing from a ladder |
+| `lp-video-spray.mp4` | `VOD_20260906_150144` (5–17s) | Spraying a fully masked stucco wall |
+| `lp-video-detail.mp4` | `VOD_20260907_100112` (5–13s) | Hand-painting beams and eaves |
+
+Each has a matching `lp-video-*.jpg` poster. **Total payload is 2.3 MB for all three** —
+keep it that way. Re-encode recipe (540x960, CRF 30, no audio, faststart):
+
+```bash
+ffmpeg -ss <start> -t <dur> -i input.mp4 -vf "scale=540:960:flags=lanczos" \
+  -c:v libx264 -preset slow -crf 30 -pix_fmt yuv420p -an -movflags +faststart out.mp4
+```
+
+`ffmpeg`/`ffprobe` are static builds in `~/.local/bin` (no Homebrew on this machine).
+**Still missing: a 60–90s owner intro video of Chris to camera** — highest-leverage asset left.
 
 ### Ideogram-generated icons (generated via API, orange or white-on-black)
 | File | Used in | Description |

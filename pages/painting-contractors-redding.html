@@ -879,6 +879,520 @@
     }
 
     /* ── RESPONSIVE ─────────────────────────── */
+    /* ── WORK VIDEOS ────────────────────────── */
+    #work-videos {
+      background: var(--dark2);
+      padding: 72px 0;
+    }
+    #work-videos .section-tag { color: rgba(249,99,2,.9); }
+    #work-videos .section-title { color: var(--white); }
+    #work-videos .section-header { margin-bottom: 40px; }
+    #work-videos .section-header p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.62);
+      max-width: 620px;
+      margin: 14px auto 0;
+    }
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .video-card { display: flex; flex-direction: column; }
+    .video-frame {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 14px 34px rgba(0,0,0,.42);
+    }
+    .video-frame video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-step {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .video-title {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      color: var(--white);
+      margin: 18px 0 7px;
+    }
+    .video-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: rgba(255,255,255,.66);
+    }
+    .videos-note {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: rgba(255,255,255,.45);
+    }
+
+    @media (max-width: 900px) {
+      .videos-grid { gap: 14px; }
+      .video-title { font-size: 17px; margin-top: 14px; }
+      .video-desc { font-size: 13.5px; }
+    }
+    @media (max-width: 600px) {
+      #work-videos { padding: 56px 0; }
+      .videos-grid { grid-template-columns: 1fr; gap: 32px; }
+      .video-card { max-width: 300px; margin: 0 auto; width: 100%; }
+    }
+
+    /* ── CASE STUDIES ───────────────────────── */
+    #case-studies {
+      background: var(--white);
+      padding: 72px 0;
+    }
+    .case {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 38px;
+      align-items: center;
+    }
+    .case + .case {
+      margin-top: 54px;
+      padding-top: 54px;
+      border-top: 1px solid #e6e8ec;
+    }
+    .case-media {
+      display: grid;
+      gap: 10px;
+    }
+    .case-media.is-three { grid-template-columns: repeat(3, 1fr); }
+    .case-media.is-two   { grid-template-columns: repeat(2, 1fr); }
+    .case-stage {
+      margin: 0;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--gray-light);
+    }
+    .case-stage img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .case-stage figcaption {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(17,19,24,.86);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+    .case-stage.is-after figcaption { background: var(--orange); }
+    .case-body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 2.8vw, 32px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .case-body h3 span { color: var(--orange); }
+    .case-body p {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: #43484f;
+      margin-bottom: 18px;
+    }
+    .case-facts {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .case-facts li {
+      background: var(--gray-light);
+      border: 1px solid #e2e5ea;
+      border-radius: 100px;
+      padding: 7px 15px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: #3a3f46;
+    }
+    .cases-cta {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid #e6e8ec;
+    }
+    .cases-cta p {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+    .cases-cta .btn-primary { width: auto; }
+
+    /* ── MEET CHRIS ─────────────────────────── */
+    #meet-chris {
+      background: var(--gray-light);
+      padding: 72px 0;
+    }
+    .chris-inner {
+      display: grid;
+      grid-template-columns: .78fr 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+    .chris-photo-wrap {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 18px 44px rgba(0,0,0,.18);
+    }
+    .chris-photo-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .chris-photo-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(17,19,24,.92), rgba(17,19,24,0));
+      padding: 34px 20px 16px;
+      color: var(--white);
+    }
+    .chris-photo-caption strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+    .chris-photo-caption span {
+      font-size: 13.5px;
+      color: rgba(255,255,255,.75);
+    }
+    .chris-body h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.6vw, 42px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--dark);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .chris-body h2 span { color: var(--orange); }
+    .chris-body p {
+      font-size: 16px;
+      line-height: 1.78;
+      color: #43484f;
+      margin-bottom: 16px;
+    }
+    .chris-body p strong { color: var(--dark); }
+    .chris-sign {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--dark);
+      padding-left: 16px;
+      border-left: 3px solid var(--orange);
+      margin: 22px 0 26px;
+    }
+    .chris-sign span {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--gray);
+      margin-top: 3px;
+    }
+    .chris-creds {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .chris-cred {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--white);
+      border: 1px solid #e2e5ea;
+      border-radius: 10px;
+      padding: 13px 15px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: #33383f;
+    }
+    .chris-cred b {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 14.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--dark);
+    }
+    .chris-cred-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .chris-cred a { color: var(--orange); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .case { grid-template-columns: 1fr; gap: 26px; }
+      .case-media.is-three { grid-template-columns: 1fr; }
+      .chris-inner { grid-template-columns: 1fr; gap: 30px; }
+      .chris-photo-wrap { max-width: 380px; margin: 0 auto; }
+    }
+    @media (max-width: 600px) {
+      #case-studies, #meet-chris { padding: 56px 0; }
+      .case + .case { margin-top: 40px; padding-top: 40px; }
+      .chris-creds { grid-template-columns: 1fr; }
+      .cases-cta .btn-primary { width: 100%; font-size: 16px; padding: 17px 22px; }
+    }
+
+    /* ── PRICING ────────────────────────────── */
+    #pricing {
+      background: var(--white);
+      padding: 72px 0;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .price-card {
+      background: var(--gray-light);
+      border: 2px solid #e6e8ec;
+      border-radius: 16px;
+      padding: 34px 26px 30px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .price-card.is-featured {
+      background: var(--dark);
+      border-color: var(--orange);
+      box-shadow: 0 18px 44px rgba(0,0,0,.24);
+    }
+    .price-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .price-card-name {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+    .price-card.is-featured .price-card-name { color: var(--white); }
+    .price-card-size {
+      font-size: 14px;
+      color: var(--gray);
+      margin-top: 5px;
+    }
+    .price-card.is-featured .price-card-size { color: rgba(255,255,255,.6); }
+    .price-card-divider {
+      height: 1px;
+      background: #dcdfe4;
+      margin: 20px 0;
+    }
+    .price-card.is-featured .price-card-divider { background: rgba(255,255,255,.16); }
+    .price-card-from {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .price-card.is-featured .price-card-from { color: rgba(255,255,255,.62); }
+    .price-card-amount {
+      font-family: var(--font-display);
+      font-size: 54px;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin: 4px 0 16px;
+    }
+    .price-card-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: #4b5158;
+      margin-top: auto;
+    }
+    .price-card.is-featured .price-card-desc { color: rgba(255,255,255,.78); }
+
+    .price-includes {
+      background: var(--gray-light);
+      border-radius: 16px;
+      padding: 34px 32px;
+      margin-bottom: 32px;
+    }
+    .price-includes-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      color: var(--dark);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .price-includes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px 28px;
+    }
+    .price-include {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #33383f;
+    }
+    .price-include-icon {
+      flex-shrink: 0;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .price-note {
+      border: 2px solid var(--orange);
+      border-radius: 16px;
+      padding: 38px 40px;
+      text-align: center;
+      background: #fffaf6;
+    }
+    .price-note h3 {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--dark);
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
+    .price-note h3 span { color: var(--orange); }
+    .price-note p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #43484f;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+    .price-note p strong { color: var(--dark); }
+    .price-note-facts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 26px 0;
+    }
+    .price-note-fact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1.5px solid #ecd9c9;
+      border-radius: 100px;
+      padding: 9px 20px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+    .price-note-fact span { color: var(--orange); }
+    .price-note .btn-primary { width: auto; }
+
+    @media (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
+      .price-includes-grid { grid-template-columns: repeat(2, 1fr); }
+      .price-note { padding: 32px 26px; }
+    }
+    @media (max-width: 600px) {
+      #pricing { padding: 56px 0; }
+      .price-includes { padding: 28px 22px; }
+      .price-includes-grid { grid-template-columns: 1fr; }
+      .price-card-amount { font-size: 46px; }
+      .price-note .btn-primary { width: 100%; font-size: 16px; padding: 17px 22px; }
+    }
+
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 32px; padding: 40px 0 36px; }
       .hero-form-card { max-width: 520px; margin: 0 auto; }
@@ -943,9 +1457,10 @@
 
       <nav class="header-nav" aria-label="Main navigation">
         <a href="#transformations">Our Work</a>
+        <a href="#pricing">Pricing</a>
         <a href="#process">How It Works</a>
         <a href="#reviews">Reviews</a>
-        <a href="../about.html" target="_blank" rel="noopener">About Us</a>
+        <a href="#meet-chris">About Chris</a>
       </nav>
     </div>
 
@@ -972,9 +1487,10 @@
 
   <nav class="header-mobile-nav" id="header-mobile-nav" aria-label="Mobile navigation">
     <a href="#transformations">Our Work</a>
+        <a href="#pricing">Pricing</a>
     <a href="#process">How It Works</a>
     <a href="#reviews">Reviews</a>
-    <a href="../about.html" target="_blank" rel="noopener">About Us</a>
+    <a href="#meet-chris">About Chris</a>
     <a href="#estimate-form" class="header-mobile-cta">Get My Free Estimate</a>
   </nav>
 </header>
@@ -1117,12 +1633,76 @@
   </div>
 </section>
 
+<!-- ═══════════════ CASE STUDIES ═══════════════ -->
+<section id="case-studies">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Real Transformations</span>
+      <h2 class="section-title">Before and After.<br><span>Same House.</span></h2>
+    </div>
+
+    <article class="case">
+      <div class="case-media is-two">
+        <figure class="case-stage">
+          <img src="../images/lp-case1-before.jpg" alt="Faded dark red wood siding before repainting, Shasta County CA home" width="900" height="600" loading="lazy">
+          <figcaption>Before</figcaption>
+        </figure>
+        <figure class="case-stage is-after">
+          <img src="../images/lp-case1-after.jpg" alt="Same home repainted in warm greige with crisp white trim by Husky Pro Painting" width="900" height="600" loading="lazy">
+          <figcaption>After</figcaption>
+        </figure>
+      </div>
+      <div class="case-body">
+        <h3>From Faded Red<br><span>To Warm Greige</span></h3>
+        <p>Decades of Northern California sun had left this home's dark red wood siding chalked and weathered, with bare board showing through on the south-facing walls.</p>
+        <p>We power washed the entire envelope, scraped and sanded the failing areas, caulked every joint and primed all bare wood before a single finish coat went on. Siding, trim, fascia and the carport were all repainted &mdash; taking the house from the darkest color on the road to a warm greige with crisp white trim.</p>
+        <ul class="case-facts">
+          <li>Wood siding &amp; trim</li>
+          <li>Carport included</li>
+          <li>Full prep &amp; prime</li>
+          <li>Two finish coats</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-media is-two">
+        <figure class="case-stage">
+          <img src="../images/lp-case2-before.jpg" alt="Two-story stucco home with faded mauve paint and peeling steps before repainting" width="900" height="1200" loading="lazy">
+          <figcaption>Before</figcaption>
+        </figure>
+        <figure class="case-stage is-after">
+          <img src="../images/lp-case2-after.jpg" alt="Same stucco home repainted in two-tone terracotta and sand with white columns by Husky Pro Painting" width="900" height="1200" loading="lazy">
+          <figcaption>After</figcaption>
+        </figure>
+      </div>
+      <div class="case-body">
+        <h3>A Complete Color<br><span>Change On Stucco</span></h3>
+        <p>Washed-out mauve and tired tan across a two-story stucco facade, with paint failing on the front steps and column bases &mdash; the architecture was there, but the color had given up.</p>
+        <p>We masked the full elevation, prepped and primed every failing surface, then repainted in a two-tone terracotta and sand scheme with brilliant white columns and deep red steps. Same house, same architecture, completely different presence from the street.</p>
+        <ul class="case-facts">
+          <li>Two-story stucco</li>
+          <li>Full color change</li>
+          <li>Columns &amp; steps</li>
+          <li>Masked &amp; primed</li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="cases-cta">
+      <p>What could your home look like?</p>
+      <a href="#estimate-form" class="btn-primary">Show Me &mdash; Get My Free Estimate &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══════════════ GALLERY ═══════════════ -->
 <section id="transformations">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Our Work</span>
-      <h2 class="section-title">Real Projects.<br><span>Real Results.</span></h2>
+      <span class="section-tag">More Of Our Work</span>
+      <h2 class="section-title">More Recent<br><span>Projects.</span></h2>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item">
@@ -1150,6 +1730,73 @@
         <div class="gallery-caption">📍 Shasta County — Full Exterior</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Transparent Pricing</span>
+      <h2 class="section-title">What Does Painting<br><span>Cost in Redding?</span></h2>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <div class="price-card-name">Small Home</div>
+        <div class="price-card-size">Up to 1,200 sq ft</div>
+        <div class="price-card-divider"></div>
+        <div class="price-card-from">Starting at</div>
+        <div class="price-card-amount">$4,850</div>
+        <p class="price-card-desc">Single story with standard trim and paint in sound condition. Typically 2&ndash;3 days on site.</p>
+      </div>
+
+      <div class="price-card is-featured">
+        <div class="price-badge">Most Redding Homes</div>
+        <div class="price-card-name">Mid-Size Home</div>
+        <div class="price-card-size">1,200 &ndash; 2,200 sq ft</div>
+        <div class="price-card-divider"></div>
+        <div class="price-card-from">Starting at</div>
+        <div class="price-card-amount">$6,900</div>
+        <p class="price-card-desc">One or two stories with moderate prep, trim detail and fascia work. Typically 3&ndash;5 days on site.</p>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card-name">Large Home</div>
+        <div class="price-card-size">2,200+ sq ft</div>
+        <div class="price-card-divider"></div>
+        <div class="price-card-from">Starting at</div>
+        <div class="price-card-amount">$9,500</div>
+        <p class="price-card-desc">Two stories, extensive trim, heavy prep or a full color change. Typically 5&ndash;8 days on site.</p>
+      </div>
+
+    </div>
+
+    <div class="price-includes">
+      <div class="price-includes-title">Every Estimate Includes</div>
+      <div class="price-includes-grid">
+        <div class="price-include"><span class="price-include-icon">&check;</span> Power washing and full surface prep</div>
+        <div class="price-include"><span class="price-include-icon">&check;</span> Scraping, sanding and caulking</div>
+        <div class="price-include"><span class="price-include-icon">&check;</span> Spot priming on all bare surfaces</div>
+        <div class="price-include"><span class="price-include-icon">&check;</span> Two finish coats of Sherwin-Williams SuperPaint&reg;</div>
+        <div class="price-include"><span class="price-include-icon">&check;</span> Full masking and daily cleanup</div>
+        <div class="price-include"><span class="price-include-icon">&check;</span> 5-year workmanship warranty</div>
+      </div>
+    </div>
+
+    <div class="price-note">
+      <h3>These Are Starting Prices &mdash;<br><span>Not Your Quote</span></h3>
+      <p>No two homes in Redding are the same. The condition of your existing paint, one story or two, wood siding versus stucco, how much trim and detail you have, and whether you're making a dramatic color change all move the final number.</p>
+      <p>That's why we don't quote over the phone or off a satellite photo. <strong>We come to your home, measure every surface, inspect the real condition of your siding and trim, and hand you a written line-item estimate.</strong> The price on that paper is the price you pay &mdash; no surprises halfway through the job.</p>
+      <div class="price-note-facts">
+        <div class="price-note-fact"><span>&check;</span> The visit is free</div>
+        <div class="price-note-fact"><span>&check;</span> Takes 30&ndash;45 minutes</div>
+        <div class="price-note-fact"><span>&check;</span> Zero obligation</div>
+      </div>
+      <a href="#estimate-form" class="btn-primary">Get My Exact Price &mdash; Book My Free Estimate &rarr;</a>
+    </div>
+
   </div>
 </section>
 
@@ -1192,6 +1839,106 @@
         <p class="step-desc">Final walkthrough with you. Touch-ups on the spot. Property left spotless.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WORK VIDEOS ═══════════════ -->
+<section id="work-videos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">On The Job</span>
+      <h2 class="section-title">This Is What<br><span>Prep Looks Like</span></h2>
+      <p>No stock footage. These are our own crews on Redding-area homes &mdash; the unglamorous work that decides whether your paint lasts five years or two.</p>
+    </div>
+
+    <div class="videos-grid">
+
+      <div class="video-card">
+        <div class="video-frame">
+          <span class="video-step">Step 3 &middot; Prep</span>
+          <video class="js-autoplay" poster="../images/lp-video-prep.jpg" muted loop playsinline preload="none"
+                 aria-label="Husky Pro Painting crew power washing a home exterior in Redding CA">
+            <source src="../images/lp-video-prep.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video-title">Power Washing</div>
+        <p class="video-desc">Every job starts here. We strip chalk, dirt and loose paint so the new coat bonds to a clean surface instead of sitting on top of failure.</p>
+      </div>
+
+      <div class="video-card">
+        <div class="video-frame">
+          <span class="video-step">Step 4 &middot; Paint</span>
+          <video class="js-autoplay" poster="../images/lp-video-spray.jpg" muted loop playsinline preload="none"
+                 aria-label="Husky Pro Painting spraying a masked stucco wall on a Shasta County home">
+            <source src="../images/lp-video-spray.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video-title">Masked &amp; Sprayed</div>
+        <p class="video-desc">Plastic over every surface that isn't getting painted, drop cloths down, then even coverage across the wall. Your windows and landscaping stay clean.</p>
+      </div>
+
+      <div class="video-card">
+        <div class="video-frame">
+          <span class="video-step">Step 4 &middot; Detail</span>
+          <video class="js-autoplay" poster="../images/lp-video-detail.jpg" muted loop playsinline preload="none"
+                 aria-label="Husky Pro Painting hand-painting beams and eaves on a Redding CA home">
+            <source src="../images/lp-video-detail.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video-title">Cut-In &amp; Detail</div>
+        <p class="video-desc">Beams, eaves and trim done by hand. This is the slow part &mdash; and it's what separates a job that looks sharp from one that just looks finished.</p>
+      </div>
+
+    </div>
+
+    <p class="videos-note">Real footage from Husky Pro Painting job sites in Redding &amp; Shasta County.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ MEET CHRIS ═══════════════ -->
+<section id="meet-chris">
+  <div class="container chris-inner">
+
+    <div class="chris-photo-wrap">
+      <img src="../images/lp-chris.jpg" alt="Chris, owner of Husky Pro Painting, standing beside the company van in Redding CA" width="600" height="750" loading="lazy">
+      <div class="chris-photo-caption">
+        <strong>Chris</strong>
+        <span>Owner &amp; lead contractor, Husky Pro Painting</span>
+      </div>
+    </div>
+
+    <div class="chris-body">
+      <span class="section-tag">Meet Your Contractor</span>
+      <h2>You'll Work Directly<br><span>With The Owner</span></h2>
+      <p>I'm Chris, owner of Husky Pro Painting. I'm a Northern California native, and I've spent years learning how paint behaves in Redding specifically &mdash; 100&deg;+ summers, hard UV, and dry air that will punish a bad prep job within two seasons.</p>
+      <p><strong>Here's what that means for you: I do your estimate myself, and I'm on your job.</strong> No subcontractors. No crew you've never met showing up at your door. No shortcuts taken when nobody's looking.</p>
+      <p>Every estimate I hand you is written and line-item, so you know exactly what you're paying for before we touch a wall. And if something isn't right, you call me &mdash; not a call center.</p>
+
+      <div class="chris-sign">
+        &mdash; Chris, Husky Pro Painting
+        <span>Serving Redding &amp; Shasta County, California</span>
+      </div>
+
+      <div class="chris-creds">
+        <div class="chris-cred">
+          <span class="chris-cred-icon">&check;</span>
+          <div><b>CSLB Licensed</b>License #1131340 &mdash; <a href="https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx" target="_blank" rel="noopener">verify it yourself</a></div>
+        </div>
+        <div class="chris-cred">
+          <span class="chris-cred-icon">&check;</span>
+          <div><b>General Liability</b>Your property is covered on every project</div>
+        </div>
+        <div class="chris-cred">
+          <span class="chris-cred-icon">&check;</span>
+          <div><b>Workers' Comp</b>You're not liable for injuries on your property</div>
+        </div>
+        <div class="chris-cred">
+          <span class="chris-cred-icon">&check;</span>
+          <div><b>Owner On Site</b>The person who quotes it is the person who paints it</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1345,6 +2092,35 @@
   window.addEventListener('resize', function () {
     if (window.innerWidth > 900) setOpen(false);
   });
+})();
+
+/* ── LAZY AUTOPLAY FOR JOB-SITE CLIPS ───────────────── */
+(function () {
+  var vids = document.querySelectorAll('video.js-autoplay');
+  if (!vids.length) return;
+
+  // Reduced motion, or no observer support: keep the poster and hand over controls.
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(vids, function (v) { v.controls = true; });
+    return;
+  }
+
+  // Nothing downloads until the clip is actually on screen.
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) {
+        if (v.preload === 'none') v.preload = 'auto';
+        var p = v.play();
+        if (p && p.catch) p.catch(function () { v.controls = true; });
+      } else {
+        v.pause();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  Array.prototype.forEach.call(vids, function (v) { io.observe(v); });
 })();
 </script>
 <script src="../js/gclid-capture.js"></script>
