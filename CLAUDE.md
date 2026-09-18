@@ -16,15 +16,15 @@ Expert in technical SEO and high-conversion landing pages. Pure HTML/CSS/JS — 
 - Fonts: Barlow Condensed (headings) + Barlow (body)
 - License: CSLB #1131340
 
-### ⚠️ Two phone numbers — do not mix them
+### Phone number — one number sitewide
 | Number | Used on | Purpose |
 |---|---|---|
-| **(530) 777-6573** `tel:+15307776573` | Organic site: `index.html`, service pages, location pages, blog, WhatsApp link on landings | Main business line |
-| **(530) 522-6431** `tel:+15305226431` | **Paid landing pages only** (the 5 listed below) | AI phone agent / call tracking for Google Ads |
+| **(530) 777-6573** `tel:+15307776573` | Every page: `index.html`, service pages, location pages, blog, and the 6 paid landings | Main business line |
 
-Never swap one for the other. The organic number on a paid landing breaks call attribution;
-the tracking number on an organic page sends real customers to the AI agent.
-WhatsApp on the landings intentionally points to the main number: `https://wa.me/15307776573`.
+The old tracking number **(530) 522-6431** (AI phone agent for Google Ads) was retired on
+2026-09-18 — every call now goes to the company line. Do not reintroduce it on any page.
+There is no WhatsApp link anywhere on the site (no `wa.me` in any page) — if one is ever
+added it uses this same number.
 
 - Logo: `/images/Branding/lobo.png` — husky head, orange flat on white (portrait)
 - Logo circular: `/images/Branding/logo-circular.png` — circular badge version (generated)
@@ -81,8 +81,8 @@ Their keywords (painters redding, house painters redding, etc.) are already targ
 
 ## Paid Landing Pages — 6 total
 Standalone pages (self-contained CSS, no shared stylesheets, no site nav). Google Ads traffic only.
-All are `noindex, nofollow`, use the **(530) 522-6431** tracking number, embed the GHL form
-`BCBxB8UhwNJGJPzIodqH`, load `js/gclid-capture.js`, and carry a WhatsApp button to the main number.
+All are `noindex, nofollow`, use the **(530) 777-6573** main number, embed the GHL form
+`BCBxB8UhwNJGJPzIodqH`, and load `js/gclid-capture.js`.
 
 | Page | H1 | Ad group / keyword |
 |---|---|---|
@@ -155,7 +155,7 @@ The `id` matters: `js/gclid-capture.js` looks it up to inject the gclid.
 ### Case study + owner photos (from `/Pics Cris/`, cropped with ffmpeg, ≤200kb)
 | File | Source | Content |
 |---|---|---|
-| `lp-chris.jpg` | `Screenshot_20251031_091443_Messages.jpg` | Chris beside the branded van — **cropped at x≥1240 on purpose to cut the (530) 777-6573 painted on the van**; that organic number must not appear on a paid landing. Source is a Messages screenshot, so resolution is limited — ask the client for the original photo |
+| `lp-chris.jpg` | `Screenshot_20251031_091443_Messages.jpg` | Chris beside the branded van — cropped at x≥1240, originally to cut the (530) 777-6573 painted on the van (no longer a problem now that the landings use that same number; the crop is kept as-is). Source is a Messages screenshot, so resolution is limited — ask the client for the original photo |
 | `lp-case1-before.jpg` | `IMG_20260526_100629.jpg` | Case 1 before — dark red wood siding |
 | `lp-case1-during.jpg` | `IMG_20260601_115617.jpg` | Case 1 mid-project — **not used on any page**, kept on disk. Same angle as the "before" with ladders up and the carport already white, so it's the shot that proves before and after are the same property (they're taken from different angles) |
 | `lp-case1-after.jpg` | `IMG_20260605_084759~2.jpg` | Case 1 after — warm greige + white trim |
