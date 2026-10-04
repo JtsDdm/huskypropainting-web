@@ -8,6 +8,28 @@
   <script>
     gtag('event', 'conversion', {'send_to': 'AW-18235385879/blU9CIH9usgcEJfQp_dD'});
   </script>
+
+  <!-- Meta Pixel Lead — only for visitors who came through a Meta landing
+       (pages/paint-before-you-sell.html, pages/new-home-exterior-painting.html).
+       Reuses the landing's event ID and skips if the landing already fired it. -->
+  <script>
+    (function () {
+      var lp, eid;
+      try {
+        lp = sessionStorage.getItem('meta_lp');
+        eid = sessionStorage.getItem('meta_eid');
+        if (!lp || sessionStorage.getItem('meta_lead_fired')) return;
+        sessionStorage.setItem('meta_lead_fired', '1');
+      } catch (e) { return; }
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1594920014902189');
+      fbq('track', 'Lead', { content_name: 'Free Exterior Estimate', lp_variant: lp }, eid ? { eventID: eid } : undefined);
+    })();
+  </script>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You | Husky Pro Painting — Redding, CA</title>

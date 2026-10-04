@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Analytics: GA4 + Google Ads (single source — js/analytics.js) -->
+  <script src="../js/analytics.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Home Exterior Painting | Redding CA | Husky Pro</title>
+  <meta name="description" content="Just moved to Redding? Give your new home a fresh exterior. 10% off exterior painting through October 31. Free on-site estimate, 5-year warranty.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#1A1A1A;font-family:'DM Sans',system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#0D0D0D;text-decoration-color:#F86200;text-underline-offset:3px}
+a:hover{color:#0D0D0D;text-decoration-thickness:2px}
+:focus-visible{outline:3px solid #F86200;outline-offset:3px}
+summary::-webkit-details-marker{display:none}
+::selection{background:#F86200;color:#0D0D0D}
+</style>
+  <style>
+img{max-width:100%}
+[hidden]{display:none!important}
+.lp-desk,.lp-offer,.lp-mob{display:contents}
+.lp-mob{display:none}
+a[href="#estimate"]{transition:filter .15s}
+a[href="#estimate"]:hover{filter:brightness(1.08)}
+@media (max-width:899px){
+  .lp-hero-grid{grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"copy" "form" "bullets" "photo"!important}
+  .lp-desk{display:none}
+  .lp-mob{display:contents}
+  /* leave room on the right of the sticky CTA for the GHL chat bubble */
+  #lp-mobilebar{padding-right:88px!important}
+}
+</style>
+
+<!-- Meta Pixel (browser). Conversions API is sent from GoHighLevel. -->
+<script>
+(function () {
+  var PIXEL_ID = '1594920014902189';
+  var LP = 'B-new-homeowner';
+  var GHL_FORM = 'NMNr2DyjcLEw0m0GrItk';
+
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  // Lead event ID shared with GHL: it goes in the URL as ?eid=..., the GHL form reads
+  // URL params into a hidden field, and the GHL Conversions API action sends it as the
+  // Event ID so Meta deduplicates the browser and server Lead.
+  var params = new URLSearchParams(location.search);
+  var leadEventId = params.get('eid');
+  if (!leadEventId) {
+    leadEventId = 'lead.' + Date.now() + '.' + Math.random().toString(36).slice(2, 10);
+    params.set('eid', leadEventId);
+    try { history.replaceState(history.state, '', location.pathname + '?' + params.toString() + location.hash); } catch (e) {}
+  }
+  // thank-you.html reads these to fire the Lead if the form redirects before the
+  // message below arrives (same event ID, so it is never counted twice).
+  try {
+    sessionStorage.setItem('meta_lp', LP);
+    sessionStorage.setItem('meta_eid', leadEventId);
+  } catch (e) {}
+
+  function track(name, data, eventID) {
+    data = data || {};
+    data.lp_variant = LP;
+    fbq('track', name, data, eventID ? { eventID: eventID } : undefined);
+  }
+  window.huskyTrack = track;
+
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
+
+  // Lead: the GHL form iframe posts "set-sticky-contacts" to the page once it is submitted.
+  var leadSent = false;
+  window.addEventListener('message', function (e) {
+    var d = e.data;
+    if (leadSent || !Array.isArray(d) || d[0] !== 'set-sticky-contacts') return;
+    var fromForm = Array.prototype.some.call(document.querySelectorAll('iframe'), function (f) {
+      return f.contentWindow === e.source && String(f.src).indexOf(GHL_FORM) > -1;
+    });
+    if (!fromForm) return;
+    leadSent = true;
+    try { sessionStorage.setItem('meta_lead_fired', '1'); } catch (err) {}
+    track('Lead', { content_name: 'Free Exterior Estimate' }, leadEventId);
+  });
+
+})();
+</script>
+
+</head>
+<body>
+<div id="lp-sticky" hidden>
+  <div style="position:fixed;top:0;left:0;right:0;z-index:50;background:#0D0D0D;color:#FFFFFF;box-shadow:0 6px 20px rgba(0,0,0,.25)">
+    <div style="max-width:1200px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap">
+      <span style="font-weight:700;font-size:17px">10% OFF ends in</span>
+      <span style="display:flex;gap:6px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:#F86200;font-variant-numeric:tabular-nums">
+        <span><span data-cd="dd">--</span>d</span><span><span data-cd="hh">--</span>h</span><span><span data-cd="mm">--</span>m</span><span><span data-cd="ss">--</span>s</span>
+      </span>
+      <span class="lp-desk">
+        <a href="#estimate" style="background:#F86200;color:#0D0D0D;font-weight:800;font-size:16px;text-decoration:none;padding:10px 20px;border-radius:999px">Get My Free Estimate</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<header data-screen-label="Top bar" style="background:#FFFFFF;border-bottom:1px solid #E6E6E6">
+  <div style="max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap">
+    <img src="../images/Branding/logo-horizontal.png" alt="Husky Pro Painting" style="height:52px;width:auto;display:block">
+    <div style="display:flex;align-items:center;gap:12px 24px;flex-wrap:wrap">
+      <span style="font-size:16px;font-weight:600;color:#3D3D3D">CA Lic. #1131340</span>
+      <a href="#estimate" style="display:flex;align-items:center;justify-content:center;min-height:56px;padding:0 26px;background:#F86200;color:#0D0D0D;font-weight:800;font-size:18px;text-decoration:none;border-radius:999px;box-shadow:0 6px 16px rgba(248,98,0,.28)">Get My Free Estimate</a>
+    </div>
+  </div>
+</header>
+
+<div class="lp-offer">
+  <section data-screen-label="Offer banner" style="background:#F86200;color:#0D0D0D">
+    <div style="max-width:1200px;margin:0 auto;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px 32px;flex-wrap:wrap">
+      <p style="margin:0;font-size:18px;line-height:1.45;font-weight:600;max-width:640px;text-wrap:pretty"><strong style="font-weight:800">OCTOBER OFFER: 10% OFF Exterior Painting</strong> · Only 5 projects available · Ends October 31</p>
+      <div role="timer" aria-label="Time left in the October offer" style="display:flex;gap:8px">
+        <div style="background:#0D0D0D;border-radius:12px;width:74px;padding:8px 0 6px;text-align:center"><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:30px;line-height:1.1;color:#F86200;font-variant-numeric:tabular-nums"><span data-cd="dd">--</span></div><div style="font-size:14px;font-weight:600;color:#FFFFFF">Days</div></div>
+        <div style="background:#0D0D0D;border-radius:12px;width:74px;padding:8px 0 6px;text-align:center"><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:30px;line-height:1.1;color:#F86200;font-variant-numeric:tabular-nums"><span data-cd="hh">--</span></div><div style="font-size:14px;font-weight:600;color:#FFFFFF">Hours</div></div>
+        <div style="background:#0D0D0D;border-radius:12px;width:74px;padding:8px 0 6px;text-align:center"><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:30px;line-height:1.1;color:#F86200;font-variant-numeric:tabular-nums"><span data-cd="mm">--</span></div><div style="font-size:14px;font-weight:600;color:#FFFFFF">Minutes</div></div>
+        <div style="background:#0D0D0D;border-radius:12px;width:74px;padding:8px 0 6px;text-align:center"><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:30px;line-height:1.1;color:#F86200;font-variant-numeric:tabular-nums"><span data-cd="ss">--</span></div><div style="font-size:14px;font-weight:600;color:#FFFFFF">Seconds</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="lp-ended" hidden>
+  <section style="background:#0D0D0D;color:#FFFFFF">
+    <p style="max-width:1200px;margin:0 auto;padding:18px 20px;font-size:18px;font-weight:700;text-align:center">The October offer has ended.</p>
+  </section>
+</div>
+
+<section data-screen-label="Hero" style="background:#FFFFFF;padding:40px 20px 120px;overflow:hidden">
+  <div class="lp-hero-grid" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);grid-template-areas:'copy form' 'bullets form' 'photo form';gap:28px 56px;align-items:start">
+    <div style="grid-area:copy">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+        <span style="width:28px;height:4px;border-radius:4px;background:#F86200"></span>
+        <span style="font-size:15px;font-weight:700;letter-spacing:.12em;color:#0D0D0D">EXTERIOR PAINTING · REDDING &amp; SHASTA COUNTY</span>
+      </div>
+      
+      
+        <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(40px,5.6vw,68px);line-height:1.05;letter-spacing:-.025em;color:#0D0D0D;margin:0 0 18px;text-wrap:balance">Just moved to Redding? Make it feel like <span style="font-family:'Kaushan Script',cursive;font-weight:400;color:#F86200;letter-spacing:0;font-size:1.12em">yours</span>.</h1>
+        <p style="font-size:clamp(19px,1.7vw,22px);line-height:1.5;color:#2A2A2A;margin:0;max-width:560px;text-wrap:pretty">Give your new home a fresh start on the outside. 10% off your total project when you confirm by October 31.</p>
+      
+    </div>
+
+    <ul style="grid-area:bullets;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px">
+      <li style="display:flex;gap:14px;align-items:center;font-size:19px;font-weight:600;color:#1A1A1A"><span style="flex:none;width:34px;height:34px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Free on-site estimate, written quote in 24 hours</li>
+      <li style="display:flex;gap:14px;align-items:center;font-size:19px;font-weight:600;color:#1A1A1A"><span style="flex:none;width:34px;height:34px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>5-year workmanship warranty</li>
+      <li style="display:flex;gap:14px;align-items:center;font-size:19px;font-weight:600;color:#1A1A1A"><span style="flex:none;width:34px;height:34px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Licensed &amp; insured · CA Lic. #1131340</li>
+    </ul>
+
+    <div style="grid-area:photo;position:relative;padding:22px 10px 10px">
+      <svg viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:-30px;right:-30px;top:-6px;bottom:-26px;width:calc(100% + 60px);height:calc(100% + 32px);z-index:0">
+        <path fill="#F86200" d="M30 70 C120 30 260 48 400 34 C540 22 680 20 770 52 C790 90 760 120 784 160 C796 200 770 240 740 262 C600 280 470 266 330 276 C200 286 90 290 34 256 C10 220 32 180 14 140 C4 110 18 90 30 70 Z"></path>
+        <path fill="none" stroke="#F86200" stroke-width="7" stroke-linecap="round" d="M70 22 C240 8 520 4 730 24"></path>
+        <path fill="none" stroke="#F86200" stroke-width="5" stroke-linecap="round" d="M90 290 C300 298 560 296 720 284"></path>
+      </svg>
+      <div style="position:relative;z-index:1;border-radius:24px;overflow:hidden;box-shadow:0 20px 44px rgba(13,13,13,.22);display:grid;grid-template-columns:1fr 1fr;aspect-ratio:16/10;background:#FFFFFF;gap:4px">
+        <div style="position:relative;background:#E9E9E9;display:flex;align-items:center;justify-content:center;padding:16px;text-align:center">
+          <img src="../images/meta-hero-before.jpg" alt="Before: weathered red exterior on a Redding home" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <span style="z-index:1;position:absolute;top:14px;left:14px;background:#0D0D0D;color:#FFFFFF;font-weight:800;font-size:15px;letter-spacing:.1em;padding:6px 12px;border-radius:999px">BEFORE</span>
+        </div>
+        <div style="position:relative;background:#E9E9E9;display:flex;align-items:center;justify-content:center;padding:16px;text-align:center">
+          <img src="../images/meta-hero-after.jpg" alt="After: fresh exterior paint by Husky Pro Painting" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <span style="z-index:1;position:absolute;top:14px;right:14px;background:#F86200;color:#0D0D0D;font-weight:800;font-size:15px;letter-spacing:.1em;padding:6px 12px;border-radius:999px">AFTER</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="estimate" style="grid-area:form;scroll-margin-top:80px;background:#FFFFFF;border-radius:24px;padding:28px 24px;box-shadow:0 24px 60px rgba(13,13,13,.14),0 2px 6px rgba(13,13,13,.06);border:1px solid #ECECEC">
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:28px;line-height:1.15;letter-spacing:-.015em;color:#0D0D0D;margin:0 0 6px">Claim your free estimate</h2>
+      <p style="margin:0 0 20px;font-size:18px;color:#3D3D3D">No obligation. We'll contact you to schedule your visit.</p>
+      <div id="ghl-form-hero" style="min-height:460px"></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Trust strip" style="background:#F4F4F4;padding:0 20px 72px">
+  <div style="max-width:1200px;margin:-72px auto 0;position:relative;background:#FFFFFF;border-radius:24px;box-shadow:0 18px 44px rgba(13,13,13,.10);padding:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px">
+    <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;line-height:1.25;color:#0D0D0D">5-Year Workmanship Warranty</span></div>
+    <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg></span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;line-height:1.25;color:#0D0D0D">Written Estimate in 24 Hours</span></div>
+    <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 13l9 5 9-5"></path></svg></span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;line-height:1.25;color:#0D0D0D">2-Coat Premium Acrylic Paint</span></div>
+    <div style="display:flex;align-items:center;gap:14px"><span style="flex:none;width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"></circle><path d="M8.5 14L7 22l5-3 5 3-1.5-8"></path></svg></span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;line-height:1.25;color:#0D0D0D">Licensed &amp; Insured</span></div>
+  </div>
+</section>
+
+<div class="lp-offer">
+  <section data-screen-label="Offer details" style="background:#F4F4F4;padding:0 20px 88px">
+    <div style="max-width:1200px;margin:0 auto;position:relative;background:#0D0D0D;color:#FFFFFF;border-radius:28px;overflow:hidden;padding:clamp(32px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:32px 56px;align-items:center">
+      <svg viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;right:-120px;bottom:-90px;width:560px;height:260px;opacity:.95"><path fill="#F86200" d="M30 70 C120 30 260 48 400 34 C540 22 680 20 770 52 C790 90 760 120 784 160 C796 200 770 240 740 262 C600 280 470 266 330 276 C200 286 90 290 34 256 C10 220 32 180 14 140 C4 110 18 90 30 70 Z"></path></svg>
+      <h2 style="position:relative;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(34px,4.4vw,56px);line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance"><span style="color:#F86200">10% OFF</span> your total exterior painting project</h2>
+      <div style="position:relative;display:flex;flex-direction:column;gap:24px;align-items:flex-start">
+        <p style="margin:0;font-size:19px;line-height:1.6;color:#FFFFFF;text-wrap:pretty">Applies to the full project total. For exterior painting of homes 1,500 sq ft or larger. Confirm your project by October 31, 2026 at 11:59 PM PT. Limited to 5 projects this month.</p>
+        <a href="#estimate" style="display:flex;align-items:center;justify-content:center;min-height:60px;padding:0 30px;background:#F86200;color:#0D0D0D;font-weight:800;font-size:19px;text-decoration:none;border-radius:999px">Get My Free Estimate</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section data-screen-label="Before / after" style="background:#FFFFFF;padding:88px 20px">
+  <div style="max-width:1200px;margin:0 auto">
+    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-.02em;color:#0D0D0D;margin:0 0 8px;text-align:center">See the difference.</h2>
+    <p style="margin:0 auto 40px;font-size:20px;color:#3D3D3D;text-align:center">Real projects by Husky Pro Painting.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px">
+      <div style="border-radius:22px;overflow:hidden;background:#FFFFFF;box-shadow:0 14px 36px rgba(13,13,13,.10);border:1px solid #ECECEC">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;aspect-ratio:4/3;background:#FFFFFF">
+            <div style="position:relative;background:#E9E9E9;display:flex;align-items:center;justify-content:center;padding:12px;text-align:center"><img src="../images/meta-case1-before.jpg" alt="Blue ranch home before painting" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><span style="z-index:1;position:absolute;top:12px;left:12px;background:#0D0D0D;color:#FFFFFF;font-weight:800;font-size:14px;letter-spacing:.1em;padding:5px 10px;border-radius:999px">BEFORE</span></div>
+            <div style="position:relative;background:#E9E9E9;display:flex;align-items:center;justify-content:center;padding:12px;text-align:center"><img src="../images/meta-case1-after.jpg" alt="Same ranch home after painting" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><span style="z-index:1;position:absolute;top:12px;right:12px;background:#F86200;color:#0D0D0D;font-weight:800;font-size:14px;letter-spacing:.1em;padding:5px 10px;border-radius:999px">AFTER</span></div>
+          </div>
+        </div>
+        <div style="border-radius:22px;overflow:hidden;background:#FFFFFF;box-shadow:0 14px 36px rgba(13,13,13,.10);border:1px solid #ECECEC">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;aspect-ratio:4/3;background:#FFFFFF">
+            <div style="position:relative;background:#E9E9E9;display:flex;align-items:center;justify-content:center;padding:12px;text-align:center"><img src="../images/meta-case2-before.jpg" alt="Stucco home before painting" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><span style="z-index:1;position:absolute;top:12px;left:12px;background:#0D0D0D;color:#FFFFFF;font-weight:800;font-size:14px;letter-spacing:.1em;padding:5px 10px;border-radius:999px">BEFORE</span></div>
+            <div style="position:relative;background:#E9E9E9;display:flex;align-items:center;justify-content:center;padding:12px;text-align:center"><img src="../images/meta-case2-after.jpg" alt="Same stucco home after painting" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><span style="z-index:1;position:absolute;top:12px;right:12px;background:#F86200;color:#0D0D0D;font-weight:800;font-size:14px;letter-spacing:.1em;padding:5px 10px;border-radius:999px">AFTER</span></div>
+          </div>
+        </div>
+        <div style="border-radius:22px;overflow:hidden;background:#FFFFFF;box-shadow:0 14px 36px rgba(13,13,13,.10);border:1px solid #ECECEC">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;aspect-ratio:4/3;background:#FFFFFF">
+            <div style="position:relative;background:#E9E9E9;display:flex;align-items:center;justify-content:center;padding:12px;text-align:center"><img src="../images/meta-case3-before.jpg" alt="Beige home before painting" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><span style="z-index:1;position:absolute;top:12px;left:12px;background:#0D0D0D;color:#FFFFFF;font-weight:800;font-size:14px;letter-spacing:.1em;padding:5px 10px;border-radius:999px">BEFORE</span></div>
+            <div style="position:relative;background:#E9E9E9;display:flex;align-items:center;justify-content:center;padding:12px;text-align:center"><img src="../images/meta-case3-after.jpg" alt="Same home after painting in blue" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><span style="z-index:1;position:absolute;top:12px;right:12px;background:#F86200;color:#0D0D0D;font-weight:800;font-size:14px;letter-spacing:.1em;padding:5px 10px;border-radius:999px">AFTER</span></div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="AI color preview" style="background:#F4F4F4;padding:88px 20px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 64px;align-items:center">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="width:28px;height:4px;border-radius:4px;background:#F86200"></span><span style="font-size:15px;font-weight:700;letter-spacing:.12em;color:#0D0D0D">AI COLOR PREVIEW</span></div>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-.02em;color:#0D0D0D;margin:0 0 18px;text-wrap:balance">See your colors before we paint.</h2>
+      <p style="margin:0;font-size:19px;line-height:1.65;color:#1A1A1A;max-width:540px;text-wrap:pretty">With your estimate, we show you an AI preview of your home in different colors, so you can choose with confidence. Then we bring real samples to your door.</p>
+    </div>
+    <div style="background:#FFFFFF;border-radius:24px;padding:14px;box-shadow:0 18px 44px rgba(13,13,13,.10)">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+        <div style="position:relative;overflow:hidden;aspect-ratio:3/4;border-radius:14px;background:#E9E9E9;display:flex;align-items:flex-end;padding:10px"><img src="../images/meta-color-sage.jpg" alt="Sage gray home painted by Husky Pro" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><span style="position:relative;z-index:1;width:100%;height:14px;border-radius:999px;background:#A7AE9C;box-shadow:0 0 0 3px #FFFFFF"></span></div>
+        <div style="position:relative;overflow:hidden;aspect-ratio:3/4;border-radius:14px;background:#E9E9E9;display:flex;align-items:flex-end;padding:10px"><img src="../images/meta-color-blue.jpg" alt="Slate blue home painted by Husky Pro" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><span style="position:relative;z-index:1;width:100%;height:14px;border-radius:999px;background:#3E5677;box-shadow:0 0 0 3px #FFFFFF"></span></div>
+        <div style="position:relative;overflow:hidden;aspect-ratio:3/4;border-radius:14px;background:#E9E9E9;display:flex;align-items:flex-end;padding:10px"><img src="../images/meta-color-tan.jpg" alt="Warm tan home painted by Husky Pro" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><span style="position:relative;z-index:1;width:100%;height:14px;border-radius:999px;background:#B38E6A;box-shadow:0 0 0 3px #FFFFFF"></span></div>
+      </div>
+      <p style="margin:12px 0 2px;text-align:center;font-size:14px;font-weight:700;letter-spacing:.05em;color:#3D3D3D">Three real Husky Pro homes, three palettes. Your AI preview shows yours.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="How it works" style="background:#FFFFFF;padding:88px 20px">
+  <div style="max-width:1200px;margin:0 auto">
+    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-.02em;color:#0D0D0D;margin:0 0 40px;text-align:center">How it works</h2>
+    <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:20px">
+      <li style="background:#F4F4F4;border-radius:22px;padding:28px 24px"><span style="display:flex;width:56px;height:56px;border-radius:50%;background:#0D0D0D;color:#F86200;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;margin-bottom:18px">1</span><h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:21px;line-height:1.25;color:#0D0D0D;margin:0 0 8px">Free on-site estimate.</h3><p style="margin:0;font-size:18px;line-height:1.55;color:#1A1A1A">We inspect your home and send a written quote within 24 hours.</p></li>
+      <li style="background:#F4F4F4;border-radius:22px;padding:28px 24px"><span style="display:flex;width:56px;height:56px;border-radius:50%;background:#0D0D0D;color:#F86200;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;margin-bottom:18px">2</span><h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:21px;line-height:1.25;color:#0D0D0D;margin:0 0 8px">Choose your colors.</h3><p style="margin:0;font-size:18px;line-height:1.55;color:#1A1A1A">AI preview plus real paint samples.</p></li>
+      <li style="background:#F4F4F4;border-radius:22px;padding:28px 24px"><span style="display:flex;width:56px;height:56px;border-radius:50%;background:#0D0D0D;color:#F86200;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;margin-bottom:18px">3</span><h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:21px;line-height:1.25;color:#0D0D0D;margin:0 0 8px">Full prep.</h3><p style="margin:0;font-size:18px;line-height:1.55;color:#1A1A1A">Power washing, scraping, sanding, caulking and primer.</p></li>
+      <li style="background:#F4F4F4;border-radius:22px;padding:28px 24px"><span style="display:flex;width:56px;height:56px;border-radius:50%;background:#0D0D0D;color:#F86200;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;margin-bottom:18px">4</span><h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:21px;line-height:1.25;color:#0D0D0D;margin:0 0 8px">Two coats of premium paint,</h3><p style="margin:0;font-size:18px;line-height:1.55;color:#1A1A1A">then a final walkthrough with your written 5-year warranty.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section data-screen-label="What's included" style="background:#0D0D0D;color:#FFFFFF;padding:96px 20px;position:relative;overflow:hidden">
+  <svg viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:-160px;top:-60px;width:620px;height:240px;opacity:.9"><path fill="#F86200" d="M30 70 C120 30 260 48 400 34 C540 22 680 20 770 52 C790 90 760 120 784 160 C796 200 770 240 740 262 C600 280 470 266 330 276 C200 286 90 290 34 256 C10 220 32 180 14 140 C4 110 18 90 30 70 Z"></path></svg>
+  <div style="max-width:1200px;margin:0 auto;position:relative">
+    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-.02em;color:#FFFFFF;margin:0 0 6px;text-align:center">What's included</h2>
+    <p style="margin:0 0 40px;font-size:20px;color:#FFFFFF;text-align:center">Every exterior job</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px">
+      <div style="background:#FFFFFF;color:#1A1A1A;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.25)">
+          <span style="width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a5 5 0 0 1 5-9 5 5 0 0 1 5 9M8 20l1-3M12 21v-3M16 20l-1-3"></path></svg></span>
+          <p style="margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#1A1A1A">Power washing to remove dirt, mildew and chalking</p>
+        </div>
+        <div style="background:#FFFFFF;color:#1A1A1A;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.25)">
+          <span style="width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l7-7M14 4l6 6-8 8-6-6 8-8zM9 9l6 6"></path></svg></span>
+          <p style="margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#1A1A1A">Scraping, sanding, crack filling and wood rot repair</p>
+        </div>
+        <div style="background:#FFFFFF;color:#1A1A1A;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.25)">
+          <span style="width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 12h16M12 4v16"></path></svg></span>
+          <p style="margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#1A1A1A">Caulking around windows, doors and trim</p>
+        </div>
+        <div style="background:#FFFFFF;color:#1A1A1A;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.25)">
+          <span style="width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h12v5H4zM16 8h3v6h-7v3M11 17h2v4h-2z"></path></svg></span>
+          <p style="margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#1A1A1A">Primer on bare wood and porous areas</p>
+        </div>
+        <div style="background:#FFFFFF;color:#1A1A1A;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.25)">
+          <span style="width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 10v10h14V10M9 20v-6h6v6"></path></svg></span>
+          <p style="margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#1A1A1A">Two coats on siding, trim, fascia and eaves</p>
+        </div>
+        <div style="background:#FFFFFF;color:#1A1A1A;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.25)">
+          <span style="width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V3h12v18M3 21h18M14 12h.01"></path></svg></span>
+          <p style="margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#1A1A1A">Doors, garage doors, shutters and accents</p>
+        </div>
+        <div style="background:#FFFFFF;color:#1A1A1A;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.25)">
+          <span style="width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1zM5 7l2-4h10l2 4M9 12h6"></path></svg></span>
+          <p style="margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#1A1A1A">Premium 100% acrylic paint from Sherwin-Williams and Benjamin Moore</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Why Husky Pro" style="background:#FFFFFF;padding:96px 20px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:32px 56px;align-items:stretch">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="width:28px;height:4px;border-radius:4px;background:#F86200"></span><span style="font-size:15px;font-weight:700;letter-spacing:.12em;color:#0D0D0D">WHY HUSKY PRO</span></div>
+      
+      
+        <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-.02em;color:#0D0D0D;margin:0 0 28px;text-wrap:balance">Make your new home yours.</h2>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px">
+          <li style="display:flex;gap:14px;font-size:19px;line-height:1.5;color:#1A1A1A"><span style="flex:none;width:12px;height:12px;border-radius:50%;background:#F86200;margin-top:9px"></span>The outside is the first thing you and your neighbors see.</li>
+          <li style="display:flex;gap:14px;font-size:19px;line-height:1.5;color:#1A1A1A"><span style="flex:none;width:12px;height:12px;border-radius:50%;background:#F86200;margin-top:9px"></span>Start your new home with a fresh, protected exterior.</li>
+          <li style="display:flex;gap:14px;font-size:19px;line-height:1.5;color:#1A1A1A"><span style="flex:none;width:12px;height:12px;border-radius:50%;background:#F86200;margin-top:9px"></span>Choose colors you love, with an AI preview first.</li>
+        </ul>
+      
+      <div style="margin-top:32px;background:#F4F4F4;border-radius:20px;padding:24px;display:flex;gap:16px;align-items:flex-start">
+        <span style="flex:none;width:56px;height:56px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg></span>
+        <p style="margin:0;font-size:19px;line-height:1.55;color:#1A1A1A"><strong style="color:#0D0D0D">Owner-operated.</strong> Chris oversees every project, from estimate to final walkthrough. No subcontractors.</p>
+      </div>
+      <div style="position:relative;margin-top:20px;border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#E9E9E9"><img src="../images/meta-crew.jpg" alt="The Husky Pro Painting crew in Redding" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+    </div>
+    <div style="position:relative;background:#0D0D0D;color:#FFFFFF;border-radius:28px;padding:clamp(32px,4vw,48px);overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:24px;align-items:flex-start">
+      <svg viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;right:-140px;top:-70px;width:440px;height:200px"><path fill="#F86200" d="M30 70 C120 30 260 48 400 34 C540 22 680 20 770 52 C790 90 760 120 784 160 C796 200 770 240 740 262 C600 280 470 266 330 276 C200 286 90 290 34 256 C10 220 32 180 14 140 C4 110 18 90 30 70 Z"></path></svg>
+      <span style="position:relative;width:72px;height:72px;border-radius:50%;background:#F86200;display:flex;align-items:center;justify-content:center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span>
+      <h3 style="position:relative;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(28px,3vw,38px);line-height:1.15;letter-spacing:-.015em;margin:0;color:#FFFFFF">5-year workmanship warranty on every project.</h3>
+      <p style="position:relative;margin:0;font-size:19px;line-height:1.6;color:#FFFFFF">If anything peels, bubbles or chips within that window, we fix it.</p>
+      <a href="#estimate" style="position:relative;display:flex;align-items:center;justify-content:center;min-height:60px;padding:0 30px;background:#F86200;color:#0D0D0D;font-weight:800;font-size:19px;text-decoration:none;border-radius:999px">Get My Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Reviews" style="background:#F4F4F4;padding:88px 20px">
+  <div style="max-width:1200px;margin:0 auto">
+    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-.02em;color:#0D0D0D;margin:0 0 40px;text-align:center">What your neighbors say.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+      <div style="background:#FFFFFF;border-radius:22px;padding:28px;box-shadow:0 14px 36px rgba(13,13,13,.08);border:1px solid #ECECEC;display:flex;flex-direction:column;gap:18px">
+          <div aria-label="5 out of 5 stars" style="color:#F86200;font-size:22px;letter-spacing:3px">★★★★★</div>
+          <p style="margin:0;font-size:18px;line-height:1.6;color:#1A1A1A;flex:1">“Chris is a very good worker and did a great job. He is here on time, he cleans up all of the time and is very respectful. Thank you for helping me with this huge project.”</p>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:48px;height:48px;border-radius:50%;background:#0D0D0D;color:#F86200;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px">RL</span>
+            <div style="line-height:1.35"><div style="font-weight:700;color:#0D0D0D">Randy Lachney</div><div style="font-size:15px;color:#3D3D3D">Redding, CA · Verified Angi review</div></div>
+          </div>
+        </div>
+        <div style="background:#FFFFFF;border-radius:22px;padding:28px;box-shadow:0 14px 36px rgba(13,13,13,.08);border:1px solid #ECECEC;display:flex;flex-direction:column;gap:18px">
+          <div aria-label="5 out of 5 stars" style="color:#F86200;font-size:22px;letter-spacing:3px">★★★★★</div>
+          <p style="margin:0;font-size:18px;line-height:1.6;color:#1A1A1A;flex:1">“First time hiring a painting service. The Husky Pro team worked efficiently and quickly. Very happy with the results — clean, professional and on schedule.”</p>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:48px;height:48px;border-radius:50%;background:#0D0D0D;color:#F86200;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px">DJ</span>
+            <div style="line-height:1.35"><div style="font-weight:700;color:#0D0D0D">David J.</div><div style="font-size:15px;color:#3D3D3D">Northern California · Verified Angi review</div></div>
+          </div>
+        </div>
+        <div style="background:#FFFFFF;border-radius:22px;padding:28px;box-shadow:0 14px 36px rgba(13,13,13,.08);border:1px solid #ECECEC;display:flex;flex-direction:column;gap:18px">
+          <div aria-label="5 out of 5 stars" style="color:#F86200;font-size:22px;letter-spacing:3px">★★★★★</div>
+          <p style="margin:0;font-size:18px;line-height:1.6;color:#1A1A1A;flex:1">“Respected the colors and guidelines I had in mind. Professional from start to finish. Would hire again without hesitation.”</p>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:48px;height:48px;border-radius:50%;background:#0D0D0D;color:#F86200;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px">MR</span>
+            <div style="line-height:1.35"><div style="font-weight:700;color:#0D0D0D">Maria R.</div><div style="font-size:15px;color:#3D3D3D">Palo Cedro, CA · Verified Angi review</div></div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Service area" style="background:#FFFFFF;padding:88px 20px">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <span style="display:inline-flex;width:64px;height:64px;border-radius:50%;background:#F86200;align-items:center;justify-content:center;margin-bottom:20px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></span>
+    <p style="margin:0 auto;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:clamp(24px,2.8vw,34px);line-height:1.35;letter-spacing:-.01em;color:#0D0D0D;text-wrap:balance">Proudly serving Redding, Shasta Lake, Palo Cedro, Anderson, Cottonwood, Bella Vista, Shasta and the Mount Shasta area.</p>
+  </div>
+</section>
+
+<section data-screen-label="FAQ" style="background:#F4F4F4;padding:88px 20px">
+  <div style="max-width:860px;margin:0 auto">
+    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-.02em;color:#0D0D0D;margin:0 0 32px;text-align:center">Frequently asked questions</h2>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <details style="background:#FFFFFF;border-radius:18px;box-shadow:0 6px 18px rgba(13,13,13,.06)"><summary style="list-style:none;cursor:pointer;min-height:68px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.3;color:#0D0D0D">How long does exterior paint last in Redding?<span aria-hidden="true" style="flex:none;width:36px;height:36px;border-radius:50%;background:#F86200;color:#0D0D0D;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1">+</span></summary><p style="margin:0;padding:0 24px 22px;font-size:19px;line-height:1.6;color:#1A1A1A">When done right, 7 to 10 years.</p></details>
+      <details style="background:#FFFFFF;border-radius:18px;box-shadow:0 6px 18px rgba(13,13,13,.06)"><summary style="list-style:none;cursor:pointer;min-height:68px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.3;color:#0D0D0D">What does the 10% discount apply to?<span aria-hidden="true" style="flex:none;width:36px;height:36px;border-radius:50%;background:#F86200;color:#0D0D0D;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1">+</span></summary><p style="margin:0;padding:0 24px 22px;font-size:19px;line-height:1.6;color:#1A1A1A">The total of your exterior painting project, for homes 1,500 sq ft or larger.</p></details>
+      <details style="background:#FFFFFF;border-radius:18px;box-shadow:0 6px 18px rgba(13,13,13,.06)"><summary style="list-style:none;cursor:pointer;min-height:68px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.3;color:#0D0D0D">When does the offer end?<span aria-hidden="true" style="flex:none;width:36px;height:36px;border-radius:50%;background:#F86200;color:#0D0D0D;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1">+</span></summary><p style="margin:0;padding:0 24px 22px;font-size:19px;line-height:1.6;color:#1A1A1A">Confirm your project by October 31, 2026 at 11:59 PM PT. We have 5 projects available this month.</p></details>
+      <details style="background:#FFFFFF;border-radius:18px;box-shadow:0 6px 18px rgba(13,13,13,.06)"><summary style="list-style:none;cursor:pointer;min-height:68px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.3;color:#0D0D0D">Is the estimate really free?<span aria-hidden="true" style="flex:none;width:36px;height:36px;border-radius:50%;background:#F86200;color:#0D0D0D;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1">+</span></summary><p style="margin:0;padding:0 24px 22px;font-size:19px;line-height:1.6;color:#1A1A1A">Yes. We visit your home, inspect it and send a written quote within 24 hours.</p></details>
+      <details style="background:#FFFFFF;border-radius:18px;box-shadow:0 6px 18px rgba(13,13,13,.06)"><summary style="list-style:none;cursor:pointer;min-height:68px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.3;color:#0D0D0D">What paint do you use?<span aria-hidden="true" style="flex:none;width:36px;height:36px;border-radius:50%;background:#F86200;color:#0D0D0D;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1">+</span></summary><p style="margin:0;padding:0 24px 22px;font-size:19px;line-height:1.6;color:#1A1A1A">Premium 100% acrylic exterior paint from Sherwin-Williams and Benjamin Moore.</p></details>
+      <details style="background:#FFFFFF;border-radius:18px;box-shadow:0 6px 18px rgba(13,13,13,.06)"><summary style="list-style:none;cursor:pointer;min-height:68px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;line-height:1.3;color:#0D0D0D">Are you licensed and insured?<span aria-hidden="true" style="flex:none;width:36px;height:36px;border-radius:50%;background:#F86200;color:#0D0D0D;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1">+</span></summary><p style="margin:0;padding:0 24px 22px;font-size:19px;line-height:1.6;color:#1A1A1A">Yes. CSLB License #1131340, with general liability and workers' compensation insurance.</p></details>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Final CTA" style="background:#0D0D0D;color:#FFFFFF;padding:96px 20px;position:relative;overflow:hidden">
+  <svg viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:-120px;bottom:-80px;width:680px;height:280px"><path fill="#F86200" d="M30 70 C120 30 260 48 400 34 C540 22 680 20 770 52 C790 90 760 120 784 160 C796 200 770 240 740 262 C600 280 470 266 330 276 C200 286 90 290 34 256 C10 220 32 180 14 140 C4 110 18 90 30 70 Z"></path></svg>
+  <div style="max-width:1200px;margin:0 auto;position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:40px 64px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:24px;align-items:flex-start">
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(34px,4.4vw,54px);line-height:1.08;letter-spacing:-.02em;margin:0;color:#FFFFFF;text-wrap:balance">Only 5 projects available in October. Offer ends October 31.</h2>
+    </div>
+    <div style="background:#FFFFFF;color:#1A1A1A;border-radius:24px;padding:28px 24px;box-shadow:0 24px 60px rgba(0,0,0,.35)">
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:28px;line-height:1.15;letter-spacing:-.015em;color:#0D0D0D;margin:0 0 6px">Claim your free estimate</h3>
+      <p style="margin:0 0 20px;font-size:18px;color:#3D3D3D">No obligation. We'll contact you to schedule your visit.</p>
+      <div id="ghl-form-final" style="min-height:460px"></div>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="background:#0D0D0D;color:#FFFFFF;border-top:1px solid #262626;padding:56px 20px 40px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px">
+    <div><div style="display:inline-flex;background:#FFFFFF;border-radius:16px;padding:12px 16px"><img src="../images/Branding/logo-horizontal.png" alt="Husky Pro Painting" style="height:56px;width:auto;display:block"></div></div>
+    <div style="display:flex;flex-direction:column;gap:6px;font-size:18px;line-height:1.5"><span>6970 Westside Rd 13 A</span><span>Redding, CA 96001</span><span style="margin-top:8px">Mon–Fri 7am–6pm · Sat 8am–4pm</span></div>
+    <div style="display:flex;flex-direction:column;gap:6px;font-size:18px;line-height:1.5">
+      <a href="mailto:info@huskypropainting.com" style="color:#FFFFFF">info@huskypropainting.com</a>
+      <span style="margin-top:8px">CA Lic. #1131340</span>
+      <span style="display:flex;gap:10px;margin-top:8px"><a href="/privacy.html" target="_blank" rel="noopener" style="color:#FFFFFF">Privacy</a><span>·</span><a href="/terms.html" target="_blank" rel="noopener" style="color:#FFFFFF">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="lp-mob">
+  <div style="height:88px;background:#0D0D0D"></div>
+  <div id="lp-mobilebar" style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:#FFFFFF;border-top:1px solid #E0E0E0;box-shadow:0 -8px 24px rgba(13,13,13,.12);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr;gap:10px">
+    <a href="#estimate" style="display:flex;align-items:center;justify-content:center;min-height:58px;border-radius:999px;background:#F86200;color:#0D0D0D;font-weight:800;font-size:19px;text-decoration:none">Get My Free Estimate</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  // ── October offer countdown ──
+  var TARGET = new Date('2026-10-31T23:59:59-07:00').getTime();
+  var cells = document.querySelectorAll('[data-cd]');
+  var sticky = document.getElementById('lp-sticky');
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    var diff = Math.max(0, TARGET - Date.now());
+    var s = Math.floor(diff / 1000);
+    var v = { dd: pad(Math.floor(s / 86400)), hh: pad(Math.floor(s % 86400 / 3600)), mm: pad(Math.floor(s % 3600 / 60)), ss: pad(s % 60) };
+    for (var i = 0; i < cells.length; i++) cells[i].textContent = v[cells[i].getAttribute('data-cd')];
+    if (diff <= 0) {
+      document.querySelectorAll('.lp-offer').forEach(function (el) { el.hidden = true; });
+      document.querySelectorAll('.lp-ended').forEach(function (el) { el.hidden = false; });
+      if (sticky) sticky.remove(), sticky = null;
+      return false;
+    }
+    return true;
+  }
+  if (tick()) var timer = setInterval(function () { if (!tick()) clearInterval(timer); }, 1000);
+
+  // ── Sticky countdown bar after scrolling past the hero ──
+  function onScroll() { if (sticky) sticky.hidden = window.scrollY <= 520; }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ── GHL form (two copies need distinct iframe ids or form_embed.js removes one) ──
+  var FORM = 'NMNr2DyjcLEw0m0GrItk';
+  [['ghl-form-hero', 'inline-' + FORM], ['ghl-form-final', 'inline-' + FORM + '-2']].forEach(function (pair) {
+    var el = document.getElementById(pair[0]);
+    if (!el) return;
+    var f = document.createElement('iframe');
+    f.src = 'https://api.leadconnectorhq.com/widget/form/' + FORM;
+    f.id = pair[1];
+    f.title = 'Husky Web form meta';
+    f.style.cssText = 'width:100%;height:100%;min-height:460px;border:none;border-radius:25px';
+    var attrs = { 'data-layout': "{'id':'INLINE'}", 'data-trigger-type': 'alwaysShow', 'data-trigger-value': '', 'data-activation-type': 'alwaysActivated', 'data-activation-value': '', 'data-deactivation-type': 'neverDeactivate', 'data-deactivation-value': '', 'data-form-name': 'Husky Web form meta', 'data-height': '460', 'data-layout-iframe-id': pair[1], 'data-form-id': FORM, 'data-cookie-consent': 'true', 'data-cookie-consent-provider': 'auto' };
+    for (var k in attrs) f.setAttribute(k, attrs[k]);
+    el.appendChild(f);
+  });
+})();
+</script>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a45b873686a90131bce5004" data-source="WEB_USER"></script>
+</body>
+</html>
