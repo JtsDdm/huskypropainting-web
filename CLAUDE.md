@@ -53,8 +53,8 @@ In the shared CSS (`/css/`), variable names are INVERTED:
 |---|---|---|
 | GA4 | ✅ Live | ID: `G-CPGRKPT6ZS` — in `js/analytics.js` |
 | Google Ads | ✅ Live | ID `AW-18235385879` in `js/analytics.js`. Labels: phone `nnNaCPruitEcEJfQp_dD`, form `blU9CIH9usgcEJfQp_dD`. **`js/analytics.js` is the only gtag loader** — no page hardcodes a gtag snippet |
-| Meta Pixel | ✅ Live (Meta landings only) | Pixel `1594920014902189`. Inline in the 2 Meta landings + a guarded Lead fallback in `thank-you.html`. **Not** in `js/analytics.js` — see "Meta Ads Landings" below. Conversions API is sent by GHL workflows, not by the site |
-| GHL CRM | ✅ Live | **Form** widget ID: `BCBxB8UhwNJGJPzIodqH` — used by the 6 Google Ads landings. The 2 Meta landings use a separate form, `NMNr2DyjcLEw0m0GrItk` ("Husky Web form meta", wired to the Meta Conversions API). Chat widget loader on `index.html` |
+| Meta Pixel | ✅ Live (Meta landings only) | Pixel `1594920014902189`. Inline in the 3 Meta landings + a guarded Lead fallback in `thank-you.html`. **Not** in `js/analytics.js` — see "Meta Ads Landings" below. Conversions API is sent by GHL workflows, not by the site |
+| GHL CRM | ✅ Live | **Form** widget ID: `BCBxB8UhwNJGJPzIodqH` — used by the 6 Google Ads landings. The 3 Meta landings use a separate form, `NMNr2DyjcLEw0m0GrItk` ("Husky Web form meta", wired to the Meta Conversions API). Chat widget loader on `index.html` |
 | Ideogram API | ✅ Live | Key in `.env` as `IDEOGRAM_API_KEY` |
 
 ### Conversion tracking — how it fires (`js/analytics.js`)
@@ -140,7 +140,7 @@ Icons are white-on-black PNGs from Ideogram. Use `mix-blend-mode: screen` to mak
 The `id` matters: `js/gclid-capture.js` looks it up to inject the gclid.
 (The old survey widget `UbYQqZBNDnJzQhLnbxnX` is no longer used anywhere.)
 
-## Meta Ads Landings — 2 pages (form-only)
+## Meta Ads Landings — 3 pages (A/B/C test)
 Separate from the 6 Google Ads landings: different design (DM Sans + Plus Jakarta Sans, `#F86200`),
 built for Meta traffic, October 10% offer with a countdown to 2026-10-31 23:59 PT.
 Same rules as the other paid landings: `noindex, nofollow`, no canonical, not in sitemap, no internal links.
@@ -149,22 +149,29 @@ Same rules as the other paid landings: `noindex, nofollow`, no canonical, not in
 |---|---|---|
 | `pages/paint-before-you-sell.html` | Homeowners about to sell (variant `A-listing`) | Get your home ready to list. |
 | `pages/new-home-exterior-painting.html` | Recent buyers / new homeowners (variant `B-new-homeowner`) | Just moved to Redding? Make it feel like yours. |
+| `pages/exterior-refresh.html` | Renovators (variant `C-renovate`) | Give your home the fresh look it deserves. |
 
-- **Form-only — no phone number anywhere, on purpose** (the owner can't always answer calls).
-  Do not add `tel:` links, the header phone or a "Call" button to these two pages.
+**Fair-test rule:** A, B and C are identical except title + meta description (and the `og:*` that
+mirror them), `LP`, H1, hero subtitle and the "why" block (H2 + 3 bullets). Any other change goes
+into all three. Check with a visible-text `diff` between the pages before publishing.
+
+- **Phone (530) 777-6573** is on the sticky top bar, the mobile bottom bar ("Call") and under each
+  form. A `tel:` click fires Meta `Contact` (`method: phone`, no event ID) from the page script; the
+  Google Ads call conversion still comes only from `js/analytics.js`.
 - **Form: `NMNr2DyjcLEw0m0GrItk`** ("Husky Web form meta") — a Meta-only GHL form whose workflow
   sends the Conversions API Lead. Not the Google form. The id appears twice in each page
   (`GHL_FORM` in the pixel script, `FORM` in the bottom script) — change both or the Lead stops firing.
 - Both copies of the form are created by the page script with **distinct iframe ids**
   (`inline-NMNr2DyjcLEw0m0GrItk` and `…-2`) — `form_embed.js` deletes duplicate-id iframes.
-- GHL chat widget (`6a45b873686a90131bce5004`) loads on both. The mobile sticky CTA keeps 88px
-  free on the right so the chat bubble doesn't cover it.
+- **No GHL chat widget** on these three (it covered the mobile bottom bar). It stays on the rest of the site.
+- Images use `<picture>` with a `.webp` source and the `.jpg` fallback, plus real `width`/`height`.
+  The two hero photos are `fetchpriority="high"`; everything else is `loading="lazy"`.
 - **Meta tracking:** `PageView` on load; `Lead` when the GHL iframe posts `set-sticky-contacts`
   (sent on submit). Each visit gets an event ID in the URL as `?eid=…`; the GHL form stores it in a
   hidden field so the GHL Conversions API action can send the same Event ID (browser + server dedup).
   `sessionStorage` keys `meta_lp`, `meta_eid`, `meta_lead_fired` let `thank-you.html` fire the Lead
   only for Meta-landing visitors whose landing didn't fire it before the redirect.
-- Photos: `images/meta-*.jpg` (hero, 3 before/after cases, 3 color examples, crew).
+- Photos: `images/meta-*.jpg` + `.webp` (hero, 3 before/after cases, 3 color examples, crew).
   Reviews are the same 3 verified Angi reviews as the Google landings.
 
 
